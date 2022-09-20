@@ -1,0 +1,29 @@
+
+<!-- Login modal -->
+<div class="modal fade apartment-modal" id="login-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-title">
+					<h1>Login<span class="special-color">.</span></h1>
+					<div class="short-title-separator"></div>
+				</div>
+				<form action="/login" method="post">
+				<input name="username" type="email" class="input-full main-input" placeholder="Email" />
+				<input name="password" type="password" class="input-full main-input" placeholder="Your Password" />
+				<button style="all: unset;" type="submit"><a href="/my-profile.html" class="button-primary button-shadow button-full">
+					<span>Sing In</span>
+					<div class="button-triangle"></div>
+					<div class="button-triangle2"></div>
+					<div class="button-icon"><i class="fa fa-user"></i></div>
+				</a>
+			</button>
+		</form>
+				<a href="#" class="forgot-link pull-right">Forgot your password?</a>
+				
+				<p class="modal-bottom">Don't have an account? <a href="#" class="register-link">REGISTER</a></p>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

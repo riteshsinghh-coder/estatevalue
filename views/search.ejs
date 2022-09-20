@@ -1,0 +1,113 @@
+<%- include("partials/header") -%>
+	<section class="short-image no-padding blog-short-title">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-lg-12 short-image-title">
+					<h5 class="subtitle-margin second-color">dashboard</h5>
+					<h1 class="second-color">my account</h1>
+					<div class="short-title-separator"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="featured-offers  parallax">
+		
+	
+
+<%myData.forEach(element=>{%>
+	
+
+	<div class="container1">
+		<div class="container2" >
+			<div class="featured-offer-photo">
+				<div class="type-container">
+					<div class="estate-type"><%=element.submitpropertytype%></div>
+					<div class="transaction-type"><%=element.submittransaction%></div>
+				</div>
+				<img src='uploads\<%=element.image[0]%>' style="width: 100%;" alt="" />
+				<div class="featured-offer-params" style="width:100%">
+					<div class="featured-area">
+						<img src="images/area-icon.png" alt="" /><%=element.submitarea%>m<sup>2</sup>
+					</div>
+					<div class="featured-rooms">
+						<img src="images/rooms-icon.png" alt="" /><%=element.submitbedroom%>
+					</div>
+					<div class="featured-baths">
+						<img src="images/bathrooms-icon.png" alt="" /><%=element.submitbathroom%>
+					</div>	
+											
+				</div>
+			</div>
+		</div>
+		<div class="container3">
+			<div class="head1">
+				<h4 class="featured-offer-title"><%=element.landmark%>, <%=element.submitregion%>, <%=element.submitcity%>, <%=element.submitstate%>, INDIA</h4>
+			</div>
+			
+			<span><%=element.submitmessage.slice(0,300)%></span>
+			<br><br>
+			<div class="featured-price" >
+				<span>₹<%=element.submitprice%></span>
+			</div>
+			<form action="/read" method="post">
+				<input name="_id" type="hidden" class="input-full main-input" value="<%=element._id%>" />
+				<input name="email" type="hidden" class="input-full main-input" value="<%=element.email%>" />
+			<button style="all: unset;" type="submit" class="button" >	
+				<a href="estate-details-right-sidebar.html" class="button-primary">
+					<span>read more</span>
+					<div class="button-triangle"></div>
+					<div class="button-triangle2"></div>
+					<div class="button-icon"><i class="fa fa-search"></i></div>
+				</a>
+			</button>
+			</form>
+	</div>
+	
+	</div>
+
+<!-- <form action="/read" method="post">
+	<input name="_id" type="text" class="input-full main-input" value="<%=element._id%>" />
+  
+	<button style="all: unset; margin-left: 60%;" class="button" >	
+		<a href="estate-details-right-sidebar.html" class="button-primary">
+			<span>read more</span>
+			<div class="button-triangle"></div>
+			<div class="button-triangle2"></div>
+			<div class="button-icon"><i class="fa fa-search"></i></div>
+		</a>
+	</button>
+</form> -->
+	<br>	<br>
+<%});%>
+</section>
+
+				
+<!-- Move to top button -->
+
+<div class="move-top">
+	<div class="big-triangle-second-color"></div>
+	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
+</div>	
+
+
+<!-- jQuery  -->
+    <script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
+	
+<!-- Bootstrap-->
+    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+
+<!-- Google Maps -->
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?AIzaSyBGnmdXgkR-s8DRXKlAek2kJftTvAB3V7Q&amp;sensor=false&amp;libraries=places"></script>
+	
+<!-- plugins script -->
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- template scripts -->
+	<script type="text/javascript" src="mail/validate.js"></script>
+    <script type="text/javascript" src="js/apartment.js"></script>
+<%- include("login") -%>
+<%- include("register") -%>
+<%- include("forget") -%>
+<%- include("partials/footer") -%>

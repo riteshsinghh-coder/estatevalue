@@ -1,0 +1,31 @@
+<!-- otp modal -->
+<div class="modal fade apartment-modal" id="register-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-title">
+					<h1>Otp Verification<span class="special-color">.</span></h1>
+					<div class="short-title-separator"></div>
+				</div>
+				<form action="/otp" method="post">
+				<input name="verifypin" type="hidden" class="input-full main-input" value="<%=pin%>" />
+				<input name="email" type="hidden" class="input-full main-input" value="<%=email%>" />
+
+				<input name="mailpin" type="text" class="input-full main-input" maxlength="6" size="6"placeholder="Otp send on your mail id" required />
+				<!-- <input name="phonepin" type="text" class="input-full main-input" maxlength="6" size="6"placeholder="Otp send on your mail id" required /> -->
+				
+				
+				<button style="all:unset;" type="submit"><a href="" class="button-primary button-shadow button-full">
+					<span>Verify</span>
+					<div class="button-triangle"></div>
+					<div class="button-triangle2"></div>
+					<div class="button-icon"><i class="fa fa-user"></i></div>
+				</a>
+			</button>
+		</form>
+				<p class="modal-bottom">Already registered? <a href="#" class="login-link">SING IN</a></p>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
