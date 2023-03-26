@@ -1,9 +1,9 @@
 {
   "name": "newhomes-2",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -44,5 +44,15 @@
     "sshpk": "^1.17.0",
     "twilio": "^3.76.1",
     "url": "^0.11.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riteshsinghh-coder/estatevalue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riteshsinghh-coder/estatevalue/issues"
+  },
+  "homepage": "https://github.com/riteshsinghh-coder/estatevalue#readme",
+  "description": ""
 }
