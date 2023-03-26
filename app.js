@@ -1484,6 +1484,6 @@ app.get('/estate-details-right-sidebar.html',function(req,res){
     res.sendFile(__dirname+"/estate-details-right-sidebar.html");
 })
 
-app.listen (3000,function(){
+app.listen (process.env.PORT || 3000,function(){
     console.log("server started on port 3000");
 })
