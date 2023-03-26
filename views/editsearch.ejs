@@ -1,0 +1,94 @@
+<%- include("partials/header") -%>
+	
+
+    <section class="featured-offers  parallax " >
+  
+
+		
+			<div class="searchrow">
+			<%myData.forEach(element=>{%>
+				<form action="/editread" id="searchedit"  method="post">
+					
+					
+					
+				
+				
+				<button type="submit " onclick="event.preventDefault();  document.getElementById('searchedit').submit();" style="all:unset; cursor: pointer;">
+					
+					<div class="searchfeature">
+						
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=element.image[0]%>' style="width:100%" alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=element.submitpropertytype%></div>
+									<div class="transaction-type"><%=element.submittransaction%></div>
+								</div>
+								
+							</div>
+							<input name="email" type="hidden" class="input-full main-input" value="<%=element.email%>" />
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=element._id%>" />
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"><%=element.landmark%> <%=element.submitregion%> <%=element.submitcity%> <%=element.submitstate%> INDIA</h4>
+								<p><%=element.submitmessage.slice(0,120)%></p>
+							</div>
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=element.submitarea%>m<sup>2</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=element.submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=element.submitbathroom%>
+								</div>							
+							</div>
+							
+							<div class="featured-price">
+								₹<%=element.submitprice%>
+							</div>
+							
+
+							
+						</div>
+						
+
+						
+						
+						
+				
+						
+					
+		</div>
+
+	</button>
+	
+						
+				</form>
+	
+	
+
+						
+	<br>
+		  
+<%});%>
+			</div>
+		
+
+		
+
+</section>
+
+				
+<!-- Move to top button -->
+
+<div class="move-top">
+	<div class="big-triangle-second-color"></div>
+	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
+</div>	
+
+
+<%- include("login") -%>
+<%- include("register") -%>
+<%- include("forget") -%>
+<%- include("partials/footer") -%>

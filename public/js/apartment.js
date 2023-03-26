@@ -755,6 +755,15 @@ jQuery(window).load(function() {
 			$(this).stop(true, true).animate( { height: gh + 45 }, 0);
 			$(this).find('.featured-offer-back').stop(true, true).animate( { height: gh - 40}, 0);
 		});
+		$('.searchfeature').each( function () {
+			var gh = 0; 
+			gh += $(this).find('.featured-offer-photo').outerHeight();
+			gh += $(this).find('.featured-offer-text').outerHeight();
+			gh += $(this).find('.featured-price').outerHeight();
+			gh += $(this).find('.featured-offer-params').outerHeight();
+			$(this).stop(true, true).animate( { height: gh + 45 }, 0);
+			$(this).find('.featured-offer-back').stop(true, true).animate( { height: gh - 40}, 0);
+		});
 		$('.grid-offer-col').each( function () {
 			var gh = 0; 
 			gh += $(this).find('.grid-offer-photo').outerHeight();
@@ -855,32 +864,11 @@ jQuery(window).load(function() {
 
 
 
-		if( $("#adv-search-hide").length ) {
-			$("#adv-search-hide").click(function(e) {
-				e.preventDefault();
-				if( $(this).hasClass('search-hidden') ) {
-					$(".adv-search-cont").css('bottom', '45px');
-					$(this).css('margin-top','18px');
-					$(this).removeClass('adv-search-hide-rotate');
-					$(this).removeClass('search-hidden');
-					setTimeout(function(){ 
-						$('.adv-search-section').css('overflow', 'visible'); 
-					}, 1000);
-					
-				} else {
-					$(".adv-search-cont").css('bottom', -$(".adv-search-cont").innerHeight() + 'px');
-					$(this).css('margin-top','-50px');
-					$(this).addClass('adv-search-hide-rotate');
-					$(this).addClass('search-hidden');
-					$('.adv-search-section').css('overflow', 'hidden'); 
-				}
-			})
-		}
+	
+		
+		
+/********** MODALS **********/	
 
-		
-		
-/********** MODALS **********/		
-		
 		
 		var click;
 		$( ".register-link" ).click( function() {
@@ -908,33 +896,50 @@ jQuery(window).load(function() {
 			$( "#forgot-modal" ).modal();
 			$('body').css('padding-right','0px');
 		})
+		$( ".verify-link" ).click( function() {
+			$( "#login-modal" ).modal('hide');
+			$( "#verify-modal" ).modal();
+			$('body').css('padding-right','0px');
+		})
 		
+		
+
 		$( "#login-modal" ).on('hidden.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
 		$( "#register-modal" ).on('hidden.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
+		
 		$( "#forgot-modal" ).on('hidden.bs.modal', function (e) {
+			$('body').css('padding-right','0px');
+		})
+		$( "#verify-modal" ).on('hidden.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
 		
 		$(".register-link").on('shown.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
+		
 		$(".login-link").on('shown.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
-		$(".forgot-link").on('shown.bs.modal', function (e) {
+		
+		$(".verify-link").on('shown.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
-		
-		
-		
-/********** GEOCOMPLETE ON SUMBMIT PROPERTY PAGE **********/		
+		/* If browser back button was used, flush cache */
 
 		
-		
+/********** GEOCOMPLETE ON SUMBMIT PROPERTY PAGE **********/
+
+
+
+if($('div#status').text()!='')
+{
+		  alert($('div#status').text());
+}
 		if($("#geocomplete").length) {
 			$("#geocomplete").geocomplete({
 				map: "#submit-property-map",
@@ -973,20 +978,8 @@ jQuery(window).load(function() {
 			}
 			
 			//redraw map
-			$("a[href='#tab-map']").click( function() {
-				if( estateMap ) {
-					setTimeout(function(){ 
-						google.maps.event.trigger(estateMap,'resize');
-					}, 500);
-				}
-			});
-			$("a[href='#tab-street-view']").click( function() {
-				if( panorama ) {
-					setTimeout(function(){ 
-						panorama.setVisible(true);
-					}, 500);
-				}
-			});
+			
+			
 		
 		
 		
@@ -1407,7 +1400,6 @@ function streetViewInitId(panoId,id,rotate) {
 		}, 10);
 	}
 }
-
 
 
 /********** BIG OFFERS MAP WITH INFOBOXES **********/		

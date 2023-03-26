@@ -1,7 +1,9 @@
 <%- include("partials/header") -%>	
+			<script  src="js/everyproperty.js"></script>
 			
+		
   			
-    <section class="section-dark no-padding">
+    <section class="section-dark no-padding" id="refresh">
 		<!-- Slider main container -->
 		<div id="swiper-gallery" class="swiper-container">
 			<!-- Additional required wrapper -->
@@ -391,6 +393,7 @@
 						</div>
 					</div>
 				</div>
+				
 			
 			<div class="slide-buttons slide-buttons-center">
 				<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
@@ -456,6 +459,7 @@
 			</div>
 		</div>
 	</section>
+	
 	<section class="section-light no-bottom-padding">
 		<div class="container">
 			<div class="row">
@@ -541,17 +545,20 @@
 							</ul>
 						</div>
 					</div>
+				
+					<input id="everylat" type="hidden" class="input-full main-input" value="<%=every.latitude%>" />
+					<input id="everylon" type="hidden" class="input-full main-input" value="<%=every.longitude%>" />
 					<div class="row margin-top-45">
 						<div class="col-xs-12 apartment-tabs">
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" role="tablist">
-								<!-- <li role="presentation" class="active">
+								<li role="presentation" class="active">
 									<a href="#tab-map" aria-controls="tab-map" role="tab" data-toggle="tab">
 										<span>Map</span>
 										<div class="button-triangle2"></div>
 									</a>
 								</li>
-								<li role="presentation">
+								<!-- <li role="presentation">
 									<a href="#tab-street-view" aria-controls="tab-street-view" role="tab" data-toggle="tab">
 										<span>Street view</span>
 										<div class="button-triangle2"></div>
@@ -559,14 +566,14 @@
 								</li> -->
 							</ul>
 								<!-- Tab panes -->
-							<!-- <div class="tab-content">
+							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane active" id="tab-map">
-									<div id="estate-map" class="details-map"></div>
+									<div id="map3" class="details-map"></div>
 								</div>
-								<div role="tabpanel" class="tab-pane" id="tab-street-view">
+								<!-- <div role="tabpanel" class="tab-pane" id="tab-street-view">
 									<div id="estate-street-view" class="details-map"></div>
-								</div>
-							</div> -->
+								</div> -->
+							</div>
 						</div>
 					</div>
 					<div class="row margin-top-60">
@@ -612,9 +619,9 @@
 								<div class="clearfix"></div>
 							</div>
 							<form  action="/sendmail" method="post">
-								<input name="name" type="text" class="input-short main-input" placeholder="Your name" />
+								<input name="clientname" type="text" class="input-short main-input" placeholder="Your name" />
 								<input name="email" type="hidden" value="<%=every.email%>"class="input-short pull-right main-input"/>
-								<!-- <input name="mobile" type="tel" class="input-full main-input" placeholder="Your phone no" /> -->
+								<!-- <input name="mobile" type="hidden" class="input-full main-input" placeholder="Your phone no" /> -->
 								<textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
 								<div class="form-submit-cont">
 									<button type="submit" style="all:unset;"><a href="#" class="button-primary pull-right">
@@ -1085,6 +1092,7 @@
 			</div>
 		</div>
 	</section>
+
 <!-- Move to top button -->
 
 <div class="move-top">
@@ -1092,23 +1100,29 @@
 	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
 </div>	
 
-<!-- jQuery  -->
-    <script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
-	
-<!-- Bootstrap-->
-    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
 
-<!-- Google Maps -->
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfDCV5hXiPamCIT8_vwGXuzimLQ9MF76g&amp;sensor=false&amp;libraries=places"></script>
-	
-<!-- plugins script -->
-	<script type="text/javascript" src="js/plugins.js"></script>
 
-<!-- template scripts -->
-	<!-- <script type="text/javascript" src="pumail/validate.js"></script> -->
-    <script type="text/javascript" src="js/apartment.js"></script>
+<%if(notsigned){%>
+	<script>
+		
+		window.onload = function(){
+	  document.getElementById('registermodalcheck').click();
+	  
+	var scriptTag = document.createElement("script");
+	scriptTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
+	document.getElementsByTagName("head")[0].appendChild(scriptTag);
+	}
+
+
+	
+	
+	</script>
+<%}%>
+	
+
 <%- include("login") -%>
 	<%- include("register") -%>
+	<%- include("verifymodal") -%>
+	
 	<%- include("forget") -%>
 	<%- include("partials/footer") -%>

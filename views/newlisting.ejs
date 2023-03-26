@@ -1,0 +1,410 @@
+<section class="section-light bottom-padding-45 section-top-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9">
+                <h5 class="subtitle-margin">hot</h5>
+                        <h1>new listings<span class="special-color">.</span></h1>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <a href="#" class="navigation-box navigation-box-next" id="grid-offers-owl-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
+                <a href="#" class="navigation-box navigation-box-prev" id="grid-offers-owl-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
+            </div>
+            <div class="col-xs-12">
+                <div class="title-separator-primary"></div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-offers-container">
+        <div class="owl-carousel" id="grid-offers-owl">
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">				
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[0].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[0].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[0].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[0].submitregion%>, <%=newlisting[0].submitcity%>, <%=newlisting[0].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[0].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[0].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[0].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[0].submitbathroom%>
+                            </div>							
+                        </div>	
+                        
+                    </div>
+                    <form action="/read" id="newlisting0" method="post">
+                        <input id="newlat0" type="hidden" value="<%=newlisting[0].latitude%>">
+                            <input id="newlon0" type="hidden" value="<%=newlisting[0].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[0]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[0].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map0" class="grid-offer-map"></div>
+                        <div class="button">	
+                            
+                            <a href="/read"  onclick="event.preventDefault();  document.getElementById('newlisting0').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[1].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[1].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[1].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[1].submitregion%>, <%=newlisting[1].submitcity%>, <%=newlisting[1].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[1].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[1].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[1].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[1].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting1"  method="post">
+                        <input id="newlat1" type="hidden" value="<%=newlisting[1].latitude%>">
+                            <input id="newlon1" type="hidden" value="<%=newlisting[1].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[1]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[1].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map1" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="/read"  onclick="event.preventDefault();  document.getElementById('newlisting1').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[2].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[2].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[2].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[2].submitregion%>, <%=newlisting[2].submitcity%>, <%=newlisting[2].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[2].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[2].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[2].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[2].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting2"  method="post">
+                        <input id="newlat2" type="hidden" value="<%=newlisting[2].latitude%>">
+                            <input id="newlon2" type="hidden" value="<%=newlisting[2].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[2]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[2].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map2" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="read/" onclick="event.preventDefault();  document.getElementById('newlisting2').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[3].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[3].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[3].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[3].submitregion%>, <%=newlisting[3].submitcity%>, <%=newlisting[3].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[3].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[3].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[3].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[3].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting3"  method="post">
+                        <input id="newlat3" type="hidden" value="<%=newlisting[3].latitude%>">
+                            <input id="newlon3" type="hidden" value="<%=newlisting[3].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[3]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[3].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map3" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="/read" onclick="event.preventDefault();  document.getElementById('newlisting3').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[4].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[4].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[4].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[4].submitregion%>, <%=newlisting[4].submitcity%>, <%=newlisting[4].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[4].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[4].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[4].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[4].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting4"  method="post">
+                        <input id="newlat4" type="hidden" value="<%=newlisting[4].latitude%>">
+                            <input id="newlon4" type="hidden" value="<%=newlisting[4].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[4]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[4].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map4" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="/read" onclick="event.preventDefault();  document.getElementById('newlisting4').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[5].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[5].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[5].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[5].submitregion%>, <%=newlisting[5].submitcity%>, <%=newlisting[5].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[5].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[5].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[5].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[5].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting5"  method="post">
+                        <input id="newlat5" type="hidden" value="<%=newlisting[5].latitude%>">
+                            <input id="newlon5" type="hidden" value="<%=newlisting[5].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[5]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[5].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map5" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="/read" onclick="event.preventDefault();  document.getElementById('newlisting5').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-offer-col">
+                <div class="grid-offer">
+                    <div class="grid-offer-front">
+                        <div class="grid-offer-photo">
+                            <img src='uploads\<%=newlisting[6].image[0]%>' alt="" />
+                            <div class="type-container">
+                                <div class="estate-type"><%=newlisting[6].submitpropertytype%></div>
+                                <div class="transaction-type"><%=newlisting[6].submittransaction%></div>
+                            </div>
+                        </div>
+                        <div class="grid-offer-text">
+                            <i class="fa fa-map-marker grid-offer-localization"></i>
+                            <div class="grid-offer-h4"><h4 class="grid-offer-title"><%=newlisting[6].submitregion%>, <%=newlisting[6].submitcity%>, <%=newlisting[6].submitstate%>, INDIA</h4></div>
+                            <div class="clearfix"></div>
+                            <p></p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="price-grid-cont">
+                            <div class="grid-price-label pull-left">Price:</div>
+                            <div class="grid-price pull-right">
+                                ₹<%=newlisting[6].submitprice%>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="grid-offer-params">
+                            <div class="grid-area">
+                                <img src="images/area-icon.png" alt="" /><%=newlisting[6].submitarea%> sq<sup>ft</sup>
+                            </div>
+                            <div class="grid-rooms">
+                                <img src="images/rooms-icon.png" alt="" /><%=newlisting[6].submitbedroom%>
+                            </div>
+                            <div class="grid-baths">
+                                <img src="images/bathrooms-icon.png" alt="" /><%=newlisting[6].submitbathroom%>
+                            </div>							
+                        </div>	
+                    </div>
+                    <form action="/read" id="newlisting6"  method="post">
+                        <input id="newlat6" type="hidden" value="<%=newlisting[6].latitude%>">
+                            <input id="newlon6" type="hidden" value="<%=newlisting[6].longitude%>">
+                            <input name="_id" type="hidden" class="input-full main-input" value="<%=newlisting[6]._id%>" />
+                            <input name="email" type="hidden" class="input-full main-input" value="<%=newlisting[6].email%>" />
+                    <div class="grid-offer-back">
+                        <div id="grid-map6" class="grid-offer-map"></div>
+                        <div class="button">	
+                            <a href="/read" onclick="event.preventDefault();  document.getElementById('newlisting6').submit();" class="button-primary">
+                                <span>read more</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>

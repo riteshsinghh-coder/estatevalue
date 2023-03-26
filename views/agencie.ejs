@@ -1,0 +1,124 @@
+<%- include("partials/header") -%>			
+    <section class="short-image no-padding agencies">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-lg-12 short-image-title">
+					<!-- <h5 class="subtitle-margin second-color">our</h5> -->
+					<h1 class="second-color">Trusted</h1>
+					<div class="short-title-separator"></div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+	<section class="section-light section-top-shadow">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-9">
+						<!-- <div class="row">
+							<div class="col-xs-12 col-lg-6">
+								<h5 class="subtitle-margin">LOCALIZATION: ALL</h5>
+								<h1>96 agencies found<span class="special-color">.</span></h1>
+							</div>
+							<div class="col-xs-12 col-lg-6">											
+								<div class="order-by-container">
+									<select name="transaction1" class="bootstrap-select" title="Localization:">
+										<option>Localization 1</option>
+										<option>Localization 2</option>
+										<option>Localization 3</option>
+										<option>Some Long Localization 4</option>
+									</select>
+								</div>	
+							</div>							
+							<div class="col-xs-12">
+								<div class="title-separator-primary"></div>
+							</div>
+						</div> -->
+                        
+						<%details.forEach(element=>{%>
+							
+							<form action="/trusted" id="each"  method="post"><input name="email" type="hidden" class="input-full main-input" value="<%=element.email%>" />
+								<button style="all:unset" type="submit">
+								
+						<div class="row list-agency-row">
+							
+							<div class="col-xs-12">
+								
+				
+								<div class="list-agency">
+									<div class="list-agency-left">
+										<img style="width:100%;" src="uploads/<%=element.profile%>" alt="" />
+										<div class="list-agency-description">
+											<div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-phone"></i>
+												</span>
+												<!-- <span>(0)-123-456-789</span> -->
+											</div>
+											<div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-phone"></i>
+												</span>
+												<span><%=element.phoneno%></span>
+											</div>
+											<div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-envelope fa-sm"></i>
+												</span>
+												<span><a href="#"><%=element.email%></a></span>
+											</div>
+											<div class="team-social-cont">
+												<div class="team-social">
+													<a class="team-icon-circle" href="<%=element.facebook%>">
+														<i class="fa fa-facebook"></i>
+													</a>
+												</div>
+												<!-- <div class="team-social">
+													<a class="team-icon-circle" href="<%=element.twitter%>">
+														<i class="fa fa-twitter"></i>
+													</a>
+												</div> -->
+												<div class="team-social">
+													<a class="team-icon-circle" href="<%=element.instagram%>">
+														<i class="fa fa-google-plus"></i>
+													</a>
+												</div>
+												<div class="team-social">
+													<a class="team-icon-circle" href="<%=element.website%>">
+														<i class="fa fa-skype"></i>
+													</a>
+												</div>
+											</div>
+										</div>									
+									</div>
+									<a class="list-agency-right">
+										<div class="list-agency-text">
+											<h3 class="list-agency-title"><%=element.companyname%></h3>
+											<i class="fa fa-map-marker"></i>
+											<span class="list-agency-address"><%=element.address%></span>
+											<div class="list-agency-separator"></div>
+											<%=element.description.slice(0,250)%>
+										</div>
+									</a>
+									<div class="small-triangle"></div>
+									<div class="small-triangle2"></div>
+									<a class="small-icon"><i class="fa-2x fa-solid fa-plus"></i></a>
+								</div>
+							</div>
+							
+                            
+						</div>
+					</button>
+					</form>
+						<%});%>
+						
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    
+	<%- include("login") -%>
+	<%- include("register") -%>
+	<%- include("forget") -%>
+	<%- include("partials/footer") -%>

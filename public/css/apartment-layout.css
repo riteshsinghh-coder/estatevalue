@@ -1959,10 +1959,17 @@ h6, .h6 {
 
 .featured-offer-photo {
 	position: relative;
+	width: 100%;
+    height: 200px;
+	object-fit: cover;
+	
+	overflow: hidden;
 }	
 
 .featured-offer-photo img {
-	max-width: 100%;
+	width: 100%;
+
+	height: 200px;
 }
 
 .type-container {
@@ -2093,35 +2100,53 @@ h4.featured-offer-title {
     -ms-transform-style: preserve-3d; 
 	transform-style: preserve-3d;
 }
+.searchfeature{
+	-webkit-perspective: 2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	perspective: 2000px;
+	-ms-transform: perspective(2000px);
+	-moz-transform: perspective(2000px);
+    -moz-transform-style: preserve-3d; 
+    -ms-transform-style: preserve-3d; 
+	transform-style: preserve-3d;
+}
 
 .featured-offer-map {
 	width: 100%;
-	height: 110%;
+	height: 100%;
 	position: relative;
-	margin-top: -30px;
+	/* margin-top: -30px; */
 }
 
  /* flip the pane when hovered  */
- /* html.no-pointerevents.no-touchevents .featured-offer-col:hover .featured-offer-back {
+ html.no-pointerevents.no-touchevents .featured-offer-col:hover .featured-offer-back {
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
 	-o-transform: rotateY(0deg);
 	-ms-transform: rotateY(0deg);
 	transform: rotateY(0deg);
-/* } */
+}
 
-/* html.no-pointerevents.no-touchevents .featured-offer-col:hover .featured-offer-front {
+html.no-pointerevents.no-touchevents .featured-offer-col:hover .featured-offer-front {
 	-webkit-transform: rotateY(-180deg);
 	-moz-transform: rotateY(-180deg);
 	-o-transform: rotateY(-180deg);
 	transform: rotateY(-180deg);
-}  */
+} 
 
 .featured-offer-col {
 	width: 390px;
 	position: relative;
 }
-
+.searchfeature{
+	width: 390px;
+	position: relative;
+}
+.invisible {
+	display: none;
+	visibility: hidden;
+	   }
 .featured-offer-front, .featured-offer-back {
 	width: 360px;
 }
@@ -2789,10 +2814,16 @@ html.no-pointerevents.no-touchevents .list-offer:hover .list-offer-front {
 	
 .grid-offer-photo {
 	position: relative;
+	width: 100%;
+	height:200px;
+	object-fit: cover;
+	overflow: hidden;
+	
 }
 	
 .grid-offer-photo img {
 	width: 100%;
+
 }
 
 .type-container {
@@ -2923,13 +2954,13 @@ h4.grid-offer-title {
 
 .grid-offer-map {
 	width: 100%;
-	height: 110%;
+	height: 100rem;
 	position: relative;
 	margin-top: -25px;
 }
 
-/*  flip the pane when hovered */
-/* html.no-pointerevents.no-touchevents .grid-offer-col:hover .grid-offer-back {
+ /* flip the pane when hovered */
+html.no-pointerevents.no-touchevents .grid-offer-col:hover .grid-offer-back {
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
 	-o-transform: rotateY(0deg);
@@ -2942,7 +2973,7 @@ html.no-pointerevents.no-touchevents .grid-offer-col:hover .grid-offer-front {
 	-moz-transform: rotateY(-180deg);
 	-o-transform: rotateY(-180deg);
 	transform: rotateY(-180deg);
-} */
+}
 .grid-offer-col {
 	padding: 45px 16px 45px 14px;
 }
@@ -3585,6 +3616,9 @@ footer address i.fa, .footer-blog-date i.fa {
 #offers-map {
 	position: relative;
 	width: 100%;
+	height:100rem;
+
+	
 }
 
 
@@ -4510,7 +4544,12 @@ article.big-blog-grid2-item {
 .comment-left img {
 	width: 100%;
 }
+.containerset{
+	object-fit: cover;
+}
+.containerset img{
 
+}
 .comment-right {
 	margin-left: 30px;
 	float: left;
@@ -5338,7 +5377,7 @@ address.contact-info i.fa {
 }
 
 .price-table-icon {
-	width: 84px;
+	width: 150px;
 	height: 84px;
 	border-radius: 50%;
 	position: absolute;
@@ -5526,6 +5565,7 @@ section.agencies {
 	-ms-transition:     all .5s ease-in-out;
 	-o-transition:      all .5s ease-in-out;
 	transition:         all .5s ease-in-out;
+	
 }
 
 .list-agency-separator {
@@ -5702,6 +5742,7 @@ section.agency {
 	width: 100%;
 	height: 466px;
 }
+
 
 .upload-gallery {
 	min-height: 200px;
@@ -7175,19 +7216,24 @@ h4.neighbourhood-title {
 		width: 100%;	
 	}
 	
-	.featured-offer-col {
-		
-	}
 	
+	.search{
+		all:unset;
+	}
 	.featured-offer-col,
 	.neighbourhood-col,
-	.neighbourhood-item	{
+	.neighbourhood-item{
 		width: 100%;
 	}
+	.searchfeature{
+		width: 100%;
+		position: relative;
+	}
+	
 	
 	.featured-offer-front, 
 	.featured-offer-back {
-		width: 90%;
+		width: 100%;
 	}
 	
 	.featured-offer-params {
@@ -7215,6 +7261,7 @@ h4.neighbourhood-title {
 	.grid-offer-back .button,
 	.grid-offer-map	{
 		width: 100%;
+		height: 150%;
 	}
 	
 	.grid-offer-front, 
@@ -7914,10 +7961,17 @@ h4.neighbourhood-title {
 		width: 100%;
 		
 	}
+	.searchfeature{
+		width: 100%;
+		position: relative;
+	}
+	.search{
+		all:unset;
+	}
 
 	.featured-offer-front, 
 	.featured-offer-back {
-		width: 90%;
+		width: 100%;
 		height: auto;
 		left: 5%;
 	}

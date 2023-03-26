@@ -1,4 +1,12 @@
 <%- include("partials/header") -%>
+
+<form action="/read" id="main" method="post">
+	
+	<input id="lat0" type="hidden" value="<%=featured[0].latitude%>">
+	<input id="lon0" type="hidden" value="<%=featured[0].longitude%>">
+	<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[0]._id%>" />
+	<input name="email" type="hidden" class="input-full main-input" value="<%=featured[0].email%>" />
+</form>
     <section class="no-padding adv-search-section">
 		<!-- Slider main container -->
 		<div id="swiper1" class="swiper-container">
@@ -6,7 +14,11 @@
 			<div class="swiper-wrapper">
 				<!-- Slides -->
 				<div class="swiper-slide">
-					<div class="slide-bg swiper-lazy" data-background="images/slides/1.jpg"></div>
+					<img class="slide-bg swiper-lazy" style="display: block;  
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height:100%;" src="uploads\<%=featured[0].image[0]%>" alt="">
 					<!-- Preloader image -->
 					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 					<div class="container">
@@ -15,45 +27,55 @@
 								<div class="slide-desc pull-right">
 									<div class="slide-desc-text">
 										
-										<div class="estate-type">apartment</div>
-										<div class="transaction-type">sale</div>
-										<h4 style="color:white;">Delhi, Gurgaoan , Faridabad, India</h4>
+										<div class="estate-type"><%=featured[0].submitpropertytype%></div>
+										<div class="transaction-type"><%=featured[0].submittransaction%></div><br><br>
+										<h4 style="color:white;"> <%=featured[0].submitregion%>, <%=featured[0].submitcity%>, <%=featured[0].submitstate%>, INDIA</h4>
 										<div class="clearfix"></div>
 										
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+										<p><%=featured[0].submitmessage.slice(0,120)%>
 										</p>
 									</div>
 									<div class="slide-desc-params">	
 										<div class="slide-desc-area">
-											<img src="images/area-icon.png" alt="" />54m<sup>2</sup>
+											<img src="images/area-icon.png" alt="" /><%=featured[0].submitarea%> sq<sup>ft</sup>
 										</div>
 										<div class="slide-desc-rooms">
-											<img src="images/rooms-icon.png" alt="" />3
+											<img src="images/rooms-icon.png" alt="" /><%=featured[0].submitbedroom%>
 										</div>
 										<div class="slide-desc-baths">
-											<img src="images/bathrooms-icon.png" alt="" />1
+											<img src="images/bathrooms-icon.png" alt="" /><%=featured[0].submitbathroom%>
 										</div>	
 										<div class="slide-desc-parking">
 											<img src="images/parking-icon.png" alt="" />1
 										</div>	
 									</div>
 									<div class="slide-desc-price">
-										$ 320 000
+										₹<%=featured[0].submitprice%>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<div class="slide-buttons slide-buttons-right">
 									<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
-									<a href="estate-details-right-sidebar.html" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
+									<a href=""  onclick="event.preventDefault();  document.getElementById('main').submit();" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
 									<a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<form action="/read" id="main1" method="post">
+	
+					<input id="lat1" type="hidden" value="<%=featured[1].latitude%>">
+					<input id="lon1" type="hidden" value="<%=featured[1].longitude%>">
+					<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[1]._id%>" />
+					<input name="email" type="hidden" class="input-full main-input" value="<%=featured[1].email%>" />
+				</form>
 				<div class="swiper-slide">
-					<div class="slide-bg swiper-lazy" data-background="images/slides/2.jpg"></div>
+					<img class="slide-bg swiper-lazy" style="display: block;  
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height:100%;" src="uploads\<%=featured[1].image[0]%>" alt="">
 					<!-- Preloader image -->
 					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 					<div class="container">
@@ -62,36 +84,36 @@
 								<div class="slide-desc pull-left">
 									<div class="slide-desc-text">
 										
-										<div class="estate-type">house</div>
-										<div class="transaction-type">sale</div>
-										<h4>West Fourth Street, New York 10003, USA</h4>
+										<div class="estate-type"><%=featured[1].submitpropertytype%></div>
+										<div class="transaction-type"><%=featured[1].submittransaction%></div><br><br>
+										
+										<h4> <%=featured[1].submitregion%>, <%=featured[1].submitcity%>, <%=featured[1].submitstate%>, INDIA</h4>
 										<div class="clearfix"></div>
 										
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+										<p><%=featured[1].submitmessage.slice(0,120)%></p>
 									</div>
 									<div class="slide-desc-params">	
 										<div class="slide-desc-area">
-											<img src="images/area-icon.png" alt="" />350m<sup>2</sup>
+											<img src="images/area-icon.png" alt="" /><%=featured[1].submitarea%> sq<sup>ft</sup>
 										</div>
 										<div class="slide-desc-rooms">
-											<img src="images/rooms-icon.png" alt="" />8
+											<img src="images/rooms-icon.png" alt="" /><%=featured[1].submitbedroom%>
 										</div>
 										<div class="slide-desc-baths">
-											<img src="images/bathrooms-icon.png" alt="" />3
+											<img src="images/bathrooms-icon.png" alt="" /><%=featured[1].submitbathroom%>
 										</div>	
 										<div class="slide-desc-parking">
-											<img src="images/parking-icon.png" alt="" />2
+											<img src="images/parking-icon.png" alt="" />1
 										</div>	
 									</div>
 									<div class="slide-desc-price">
-										$ 650 000
+										₹<%=featured[1].submitprice%>
 									</div>		
 									<div class="clearfix"></div>										
 								</div>
 								<div class="slide-buttons slide-buttons-left">
 									<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
-									<a href="estate-details-right-sidebar.html" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
+									<a href="" onclick="event.preventDefault();  document.getElementById('main1').submit();"  class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
 									<a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
 								</div>
 							</div>
@@ -99,8 +121,19 @@
 					</div>
 					
 				</div>
+				<form action="/read" id="main2" method="post">
+	
+					<input id="lat2" type="hidden" value="<%=featured[2].latitude%>">
+					<input id="lon2" type="hidden" value="<%=featured[2].longitude%>">
+					<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[2]._id%>" />
+					<input name="email" type="hidden" class="input-full main-input" value="<%=featured[2].email%>" />
+				</form>
 				<div class="swiper-slide">
-					<div class="slide-bg swiper-lazy" data-background="images/slides/3.jpg"></div>
+					<img class="slide-bg swiper-lazy" style="display: block;  
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height:100%;" src="uploads\<%=featured[2].image[0]%>" alt="">
 					<!-- Preloader image -->
 					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 					<div class="container">
@@ -109,44 +142,44 @@
 								<div class="slide-desc center-block">
 									<div class="slide-desc-text">
 										
-										<div class="estate-type">apartment</div>
-										<div class="transaction-type">sale</div>
-										<h4>E. Elwood St. Phoenix, AZ 85034, USA</h4>
+										<div class="estate-type"><%=featured[2].submitpropertytype%></div>
+										<div class="transaction-type"><%=featured[2].submittransaction%></div><br><br>
+										<h4><%=featured[2].submitregion%>, <%=featured[2].submitcity%>, <%=featured[2].submitstate%>, INDIA</h4>
 										<div class="clearfix"></div>
 										
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+										<p> <%=featured[2].submitmessage.slice(0,120)%>
 										</p>
 									</div>
 									<div class="slide-desc-params">	
 										<div class="slide-desc-area">
-											<img src="images/area-icon.png" alt="" />70m<sup>2</sup>
+											<img src="images/area-icon.png" alt="" /><%=featured[2].submitarea%> sq<sup>ft</sup>
 										</div>
 										<div class="slide-desc-rooms">
-											<img src="images/rooms-icon.png" alt="" />4
+											<img src="images/rooms-icon.png" alt="" /><%=featured[2].submitbedroom%>
 										</div>
 										<div class="slide-desc-baths">
-											<img src="images/bathrooms-icon.png" alt="" />1
+											<img src="images/bathrooms-icon.png" alt="" /><%=featured[2].submitbathroom%>
 										</div>	
 										<div class="slide-desc-parking">
 											<img src="images/parking-icon.png" alt="" />1
 										</div>	
 									</div>
 									<div class="slide-desc-price">
-										$ 350 000
+										₹<%=featured[2].submitprice%>
 									</div>		
 									<div class="clearfix"></div>									
 								</div>
 								<div class="slide-buttons slide-buttons-center">
 									<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
-									<a href="estate-details-right-sidebar.html" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
+									<a href="" onclick="event.preventDefault();  document.getElementById('main2').submit();"  class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-plus"></i></div></a>
 									<a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
 								</div>
 							
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> 
+				
 			</div>
 		</div>
 
@@ -161,8 +194,8 @@
 							<ul class="nav nav-tabs adv-search-tabs" role="tablist">
 								<li role="presentation" class="active" data-toggle="tooltip" data-placement="top" title="apartments"><a href="#apartments" aria-controls="apartments" role="tab" data-toggle="tab" id="adv-search-tab1"><i class="fa fa-building"></i></a></li>
 								<li role="presentation" data-toggle="tooltip" data-placement="top" title="houses"><a href="#houses" aria-controls="houses" role="tab" data-toggle="tab" id="adv-search-tab2"><i class="fa fa-home"></i></a></li>
-								<li role="presentation" data-toggle="tooltip" data-placement="top" title="commercials"><a href="#commercials" aria-controls="commercials" role="tab" data-toggle="tab" id="adv-search-tab3"><i class="fa fa-industry"></i></a></li>
-								<li role="presentation" data-toggle="tooltip" data-placement="top" title="lands"><a href="#lands" aria-controls="lands" role="tab" data-toggle="tab" id="adv-search-tab4"><i class="fa fa-tree"></i></a></li>
+								<!-- <li role="presentation" data-toggle="tooltip" data-placement="top" title="commercials"><a href="#commercials" aria-controls="commercials" role="tab" data-toggle="tab" id="adv-search-tab3"><i class="fa fa-industry"></i></a></li>
+								<li role="presentation" data-toggle="tooltip" data-placement="top" title="lands"><a href="#lands" aria-controls="lands" role="tab" data-toggle="tab" id="adv-search-tab4"><i class="fa fa-tree"></i></a></li> -->
 							</ul>
 						</div>
 						<div class="col-lg-1 visible-lg">
@@ -175,14 +208,14 @@
 				<div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade in active" id="apartments">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="transaction1" class="bootstrap-select m"  title="Transaction:" multiple>
-								<option  value="For sale">For sale</option>
-								<option value="For rent">For rent</option>
+							<select name="transaction1" class="bootstrap-select m"  title="Transaction:"  >
+								<option  value="A For sale">For sale</option>
+								<option value="A For rent">For rent</option>
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
 							
-							<select name="state" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
+							<select name="state1" class="bootstrap-select" title="Country:"   data-actions-box="true">
 								
 								<%ApartmentState.forEach(element=>{%>
 									<%element.forEach(part=>{%>
@@ -194,7 +227,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="city" class="bootstrap-select" title="City:" multiple data-actions-box="true">
+							<select name="city1" class="bootstrap-select" title="City:"  data-actions-box="true">
 								
 								<%ApartmentCity.forEach(element=>{%>
 									<%element.forEach(part=>{%>
@@ -206,7 +239,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="location" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
+							<select name="location1" class="bootstrap-select" title="Location:"  data-actions-box="true">
 								
 								<%ApartmentRegion.forEach(element=>{%>
 									<%element.forEach(part=>{%>
@@ -225,7 +258,7 @@
 								<span>Rs</span>
 								<input type="text" id="slider-range-price1-value" readonly class="adv-search-amount">
 								<div class="clearfix"></div>
-								<div id="slider-range-price1" data-min="0" data-max="300000" name="price" class="slider-range"></div>
+								<div id="slider-range-price1" data-min="0" data-max="300000000000" name="price" class="slider-range"></div>
 							</div>
 							
 						</div>
@@ -235,7 +268,7 @@
 								<span>m<sup>2</sup></span>
 								<input type="text" id="slider-range-area1-value" readonly class="adv-search-amount">
 								<div class="clearfix"></div>
-								<div id="slider-range-area1" data-min="0" data-max="580" name="area" class="slider-range"></div>
+								<div id="slider-range-area1" data-min="0" data-max="55580" name="area" class="slider-range"></div>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
@@ -259,14 +292,14 @@
 				<div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="houses">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-								<option vlaue="For sale">For sale</option>
-								<option value="For rent">For rent</option>
+							<select name="transaction1" class="bootstrap-select" title="Transaction:" >
+								<option vlaue="H For sale">For sale</option>
+								<option value="H For rent">For rent</option>
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
 							
-							<select name="state" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
+							<select name="state2" class="bootstrap-select" title="Country:"  data-actions-box="true">
 								
 								<%HouseState.forEach(element=>{%>
 									<%element.forEach(part=>{%>
@@ -283,7 +316,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="city" class="bootstrap-select" title="City:" multiple data-actions-box="true">
+							<select name="city2" class="bootstrap-select" title="City:" data-actions-box="true">
 								<%HouseCity.forEach(element=>{%>
 									<%element.forEach(part=>{%>
 										<option value="<%=part%>"><%=part%></option>
@@ -298,7 +331,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="location" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
+							<select name="location2" class="bootstrap-select" title="Location:"  data-actions-box="true">
 
 								<%HouseRegion.forEach(element=>{%>
 									<%element.forEach(part=>{%>
@@ -351,17 +384,18 @@
 						</div>
 					</div>
 				</div>
+				
 				<div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="commercials">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-								<option value="For sale">For sale</option>
-								<option value="For rent">For rent</option>
+							<select name="transaction1" class="bootstrap-select" title="Transaction:" >
+								<option value="C For sale">For sale</option>
+								<option value="C For rent">For rent</option>
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
 							
-							<select name="state" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
+							<select name="state3" class="bootstrap-select" title="Country:"  data-actions-box="true">
 								
 								<%CommercialState.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
@@ -377,7 +411,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="city" class="bootstrap-select" title="City:" multiple data-actions-box="true">
+							<select name="city3" class="bootstrap-select" title="City:"  data-actions-box="true">
 								<%CommercialCity.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
 					
@@ -390,7 +424,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="location" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
+							<select name="location3" class="bootstrap-select" title="Location:"  data-actions-box="true">
 								<%CommercialRegion.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
 					
@@ -405,7 +439,7 @@
 					</div>
 					<div class="row">
 					<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="type" class="bootstrap-select short-margin" title="Type:" multiple>
+							<select name="type" class="bootstrap-select short-margin" title="Type:" >
 								<option value="Shop/service">Shop/service</option>
 								<option value="Factory">Factory</option>
 								<option value="Warehouse">Warehouse</option>
@@ -444,14 +478,14 @@
 				<div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="lands">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-								<option value="For sale">For sale</option>
-								<option value="For rent">For rent</option>
+							<select name="transaction1" class="bootstrap-select" title="Transaction:" >
+								<option value="L For sale">For sale</option>
+								<option value="L For rent">For rent</option>
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
 							
-							<select name="state" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
+							<select name="state4" class="bootstrap-select" title="Country:"  data-actions-box="true">
 								
 								<%LandState.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
@@ -467,7 +501,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="city" class="bootstrap-select" title="City:" multiple data-actions-box="true">
+							<select name="city4" class="bootstrap-select" title="City:" multiple data-actions-box="true">
 								<%LandCity.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
 			
@@ -479,7 +513,7 @@
 							</select>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-lg-3">
-							<select name="location" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
+							<select name="location4" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
 								<%LandRegion.forEach(element=>{%>
 									<%element.forEach(docs=>{%>
 									
@@ -550,7 +584,7 @@
     </section>
 
 	
-    <section class="section-light bottom-padding-45 section-both-shadow">
+    <!-- <section class="section-light bottom-padding-45 section-both-shadow">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3">
@@ -599,7 +633,7 @@
 				</div>
 			</div>
 		</div>
-    </section>
+    </section> -->
 
     <section class="featured-offers parallax">
 		
@@ -620,683 +654,277 @@
 		</div>
 	
 		<div class="featured-offers-container">
+			<div class="searchrow"></div>
 			<div class="owl-carousel" id="featured-offers-owl">
 				<form action="/read" id="feature" method="post">
-				<a href="/read" onclick="event.preventDefault();  document.getElementById('feature').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer1.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">apartment</div>
-								<div class="transaction-type">sale</div>
+					<div class="featured-offer-col">
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=featured[0].image[0]%>' alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=featured[0].submitpropertytype%></div>
+									<div class="transaction-type"><%=featured[0].submittransaction%></div>
+								</div>
+								
+							</div>
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"> <%=featured[0].submitregion%>, <%=featured[0].submitcity%>, <%=featured[0].submitstate%>, INDIA</h4>
+								<p><%=featured[0].submitmessage.slice(0,120)%></p>
+							</div>
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=featured[0].submitarea%> sq<sup>ft</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=featured[0].submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=featured[0].submitbathroom%>
+								</div>							
+							</div>
+							<div class="featured-price">
+								₹<%=featured[0].submitprice%>
 							</div>
 							
 						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">250 South Dr, Fort Collins, Colorado 80523, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />54m<sup>2</sup>
+						
+						
+							<input id="lat0" type="hidden" value="<%=featured[0].latitude%>">
+							<input id="lon0" type="hidden" value="<%=featured[0].longitude%>">
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[0]._id%>" />
+							<input name="email" type="hidden" class="input-full main-input" value="<%=featured[0].email%>" />
+						<div class="featured-offer-back">
+						
+							<div id="map0" class="featured-offer-map"></div>
+							<div class="button">	
+								<a href="/read" onclick="event.preventDefault();  document.getElementById('feature').submit();" class="button-primary">
+									<span>read more</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-search"></i></div>
+								</a>
 							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />3
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
 						</div>
-						<div class="featured-price">
-							$ 320 000
-						</div>
+					
+					</form>
 						
 					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-data" class="featured-data">
-							<h1 class="owner" style="padding:100px"></h1>
-							<h3 class="office-location" style="margin-left:100px"></h3>
-						</div>
-						<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-					
-				</div>
-			</a>
-		</form>
-		<form action="/read" id="featur" method="post">
-			<a href="/read" onclick="event.preventDefault();  document.getElementById('featur').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer2.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">apartment</div>
-								<div class="transaction-type">sale</div>
+					<form action="/read" id="feature1" method="post">
+					<div class="featured-offer-col">
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=featured[1].image[0]%>' alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=featured[1].submitpropertytype%></div>
+									<div class="transaction-type"><%=featured[1].submittransaction%></div>
+								</div>
+								
 							</div>
-						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">West Fourth Street, New York 10003, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />70m<sup>2</sup>
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"><%=featured[1].submitregion%>, <%=featured[1].submitcity%>, <%=featured[1].submitstate%>, INDIA</h4>
+								<p><%=featured[1].submitmessage.slice(0,120)%></p>
 							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />4
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=featured[1].submitarea%>sq<sup>ft</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=featured[1].submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=featured[1].submitbathroom%>
+								</div>							
 							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
+							<div class="featured-price">
+								₹<%=featured[1].submitprice%>
+							</div>
+							
 						</div>
-						<div class="featured-price">
-							$ 350 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map2" class="featured-offer-map"></div>
+						
+						<input id="lat1" type="hidden" value="<%=featured[1].latitude%>"/>
+							<input id="lon1" type="hidden" value="<%=featured[1].longitude%>">
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[1]._id%>" />
+							<input name="email" type="hidden" class="input-full main-input" value="<%=featured[1].email%>" />
+						
+							
+							
+						<div class="featured-offer-back">
+							
+							<div id="map1" class="featured-offer-map"></div>
 							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-					
-				</div>
-			</a>
-		</form>
-				<form action="/read" id="featu" method="post">
-					<a href="/read" onclick="event.preventDefault();  document.getElementById('featu').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer3.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">house</div>
-								<div class="transaction-type">sale</div>
+								<a href="/read" onclick="event.preventDefault();  document.getElementById('feature1').submit();" class="button-primary">
+									<span>read more</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-search"></i></div>
+								</a>
 							</div>
 						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">500 E. Elwood St. Phoenix, AZ 85034, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />250m<sup>2</sup>
-							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />7
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />3
-							</div>							
-						</div>
-						<div class="featured-price">
-							$ 650 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map3" class="featured-offer-map"></div>
-							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div>
-					 -->
-				</div>
-			</a>
-		</form>
-		<form action="/read" id="feat" method="post">
-			<a href="/read" onclick="event.preventDefault();  document.getElementById('feat').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer4.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">apartment</div>
-								<div class="transaction-type">sale</div>
-							</div>
-						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">N. Willamette Blvd., Portland, OR 97203-5798, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />40m<sup>2</sup>
-							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />2
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
-						</div>
-						<div class="featured-price">
-							$ 299 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map4" class="featured-offer-map"></div>
-							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-
-				</div>
-			</a>
-		</form>
-		<form action="/read" id="fea" method="post">
-			<a href="/read" onclick="event.preventDefault();  document.getElementById('fea').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer5.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">apartment</div>
-								<div class="transaction-type">sale</div>
-							</div>
-						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">One Brookings Drive St. Louis, Missouri 63130-4899, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />80m<sup>2</sup>
-							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />3
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
-						</div>
-						<div class="featured-price">
-							$ 390 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map5" class="featured-offer-map"></div>
-							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-
-				</div>
-			</a>
-		</form>
-				<form action="/read" id="fe" method="post">
-					<a href="/read" onclick="event.preventDefault();  document.getElementById('fe').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer6.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">apartment</div>
-								<div class="transaction-type">sale</div>
-							</div>
-						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">One Neumann Drive Aston, Philadelphia 19014-1298, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />3
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
-						</div>
-						<div class="featured-price">
-							$ 320 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map6" class="featured-offer-map"></div>
-							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-
-				</div>
-					</a>
-				</form>
-				<form action="/read" id="f" method="post">
-					<a href="/read" onclick="event.preventDefault();  document.getElementById('f').submit();">
-				<div class="featured-offer-col">
-					<div class="featured-offer-front">
-						<div class="featured-offer-photo">
-							<img src="images/featured-offer7.jpg" alt="" />
-							<div class="type-container">
-								<div class="estate-type">house</div>
-								<div class="transaction-type">sale</div>
-							</div>
-						</div>
-						<div class="featured-offer-text">
-							<h4 class="featured-offer-title">200 South Dr, Fort Collins, Colorado 80523, USA</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="featured-offer-params">
-							<div class="featured-area">
-								<img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-							</div>
-							<div class="featured-rooms">
-								<img src="images/rooms-icon.png" alt="" />3
-							</div>
-							<div class="featured-baths">
-								<img src="images/bathrooms-icon.png" alt="" />1
-							</div>							
-						</div>
-						<div class="featured-price">
-							$ 320 000
-						</div>
-					</div>
-					<!-- <div class="featured-offer-back">
-						<div id="featured-map7" class="featured-offer-map"></div>
-							<div class="button">	
-							<a href="estate-details-right-sidebar.html" class="button-primary">
-								<span>read more</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-					</div> -->
-
-				</div>
-					</a>
 					</form>
-
+						
+					</div>
+					<form action="/read" id="feature2" method="post">
+					<div class="featured-offer-col">
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=featured[2].image[0]%>' alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=featured[2].submitpropertytype%></div>
+									<div class="transaction-type"><%=featured[2].submittransaction%></div>
+								</div>
+								
+							</div>
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"><%=featured[2].submitregion%>, <%=featured[2].submitcity%>, <%=featured[2].submitstate%>, INDIA</h4>
+								<p><%=featured[2].submitmessage.slice(0,120)%></p>
+							</div>
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=featured[2].submitarea%> sq<sup>ft</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=featured[2].submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=featured[2].submitbathroom%>
+								</div>							
+							</div>
+							<div class="featured-price">
+								₹<%=featured[2].submitprice%>
+							</div>
+							
+						</div>
+					
+						
+								<input id="lat2" type="hidden" value="<%=featured[2].latitude%>">
+							<input id="lon2" type="hidden" value="<%=featured[2].longitude%>">
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[2]._id%>" />
+							<input name="email" type="hidden" class="input-full main-input" value="<%=featured[2].email%>" />
+						<div class="featured-offer-back">
+							
+							<div id="map2" class="featured-offer-map"></div>
+							<div class="button">	
+								<a href="/read" onclick="event.preventDefault();  document.getElementById('feature2').submit();" class="button-primary">
+									<span>read more</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-search"></i></div>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+					<form action="/read" id="feature3" method="post">
+					<div class="featured-offer-col">
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=featured[3].image[0]%>' alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=featured[3].submitpropertytype%></div>
+									<div class="transaction-type"><%=featured[3].submittransaction%></div>
+								</div>
+								
+							</div>
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"><%=featured[3].submitregion%>, <%=featured[3].submitcity%>, <%=featured[3].submitstate%>, INDIA</h4>
+								<p><%=featured[3].submitmessage.slice(0,120)%></p>
+							</div>
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=featured[3].submitarea%> sq<sup>ft</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=featured[3].submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=featured[3].submitbathroom%>
+								</div>							
+							</div>
+							<div class="featured-price">
+								₹<%=featured[3].submitprice%>
+							</div>
+							
+						</div>
+					
+						
+								<input id="lat3" type="hidden" value="<%=featured[3].latitude%>">
+							<input id="lon3" type="hidden" value="<%=featured[3].longitude%>">
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[3]._id%>" />
+							<input name="email" type="hidden" class="input-full main-input" value="<%=featured[3].email%>" />
+						<div class="featured-offer-back">
+							
+							<div id="map3" class="featured-offer-map"></div>
+							<div class="button">	
+								<a href="/read" onclick="event.preventDefault();  document.getElementById('feature3').submit();" class="button-primary">
+									<span>read more</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-search"></i></div>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+					<form action="/read" id="feature4" method="post">
+					<div class="featured-offer-col">
+						<div class="featured-offer-front">
+							<div class="featured-offer-photo">
+								<img src='uploads\<%=featured[4].image[0]%>' alt="" />
+								<div class="type-container">
+									<div class="estate-type"><%=featured[4].submitpropertytype%></div>
+									<div class="transaction-type"><%=featured[4].submittransaction%></div>
+								</div>
+								
+							</div>
+							<div class="featured-offer-text">
+								<h4 class="featured-offer-title"><%=featured[4].submitregion%>, <%=featured[4].submitcity%>, <%=featured[4].submitstate%>, INDIA</h4>
+								<p><%=featured[4].submitmessage.slice(0,120)%></p>
+							</div>
+							<div class="featured-offer-params">
+								<div class="featured-area">
+									<img src="images/area-icon.png" alt="" /><%=featured[4].submitarea%> sq<sup>ft</sup>
+								</div>
+								<div class="featured-rooms">
+									<img src="images/rooms-icon.png" alt="" /><%=featured[4].submitbedroom%>
+								</div>
+								<div class="featured-baths">
+									<img src="images/bathrooms-icon.png" alt="" /><%=featured[4].submitbathroom%>
+								</div>							
+							</div>
+							<div class="featured-price">
+								₹<%=featured[4].submitprice%>
+							</div>
+							
+						</div>
+					
+						
+								<input id="lat4" type="hidden" value="<%=featured[4].latitude%>">
+							<input id="lon4" type="hidden" value="<%=featured[4].longitude%>">
+							<input name="_id" type="hidden" class="input-full main-input" value="<%=featured[4]._id%>" />
+							<input name="email" type="hidden" class="input-full main-input" value="<%=featured[4].email%>" />
+						<div class="featured-offer-back">
+							
+							<div id="map4" class="featured-offer-map"></div>
+							<div class="button">	
+								<a href="/read" onclick="event.preventDefault();  document.getElementById('feature4').submit();" class="button-primary">
+									<span>read more</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-search"></i></div>
+								</a>
+							</div>
+						</div>
+					</form>
+						
+					</div>
+				
+		
+	</div>
+		
 			</div>
 		</div>
     </section>
 	
-	<section class="team section-light section-both-shadow">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-9">
-					<h5 class="subtitle-margin">meet our</h5>
-							<h1>proffesional team<span class="special-color">.</span></h1>
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					<a href="#" class="navigation-box navigation-box-next" id="team-owl-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
-					<a href="#" class="navigation-box navigation-box-prev"  id="team-owl-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
-				</div>
-				<div class="col-xs-12">
-					<div class="title-separator-primary"></div>
-				</div>
-			</div>
-		</div>
-		<div class="team-container">
-			<div class="owl-carousel" id="team-owl">
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent1.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>manager</h5>
-							<h4>Mark Smith<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent2.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>Agent</h5>
-							<h4>Michelle Jackson<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent3.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>specialist</h5>
-							<h4>Robert Duncan<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent4.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>agent</h5>
-							<h4>Veronica Green<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent5.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>agent</h5>
-							<h4>Timothe Lee<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-				<div class="team-member-cont">
-					<div class="team-member">
-						<div class="team-photo">
-							<img src="images/agent6.jpg" alt="" />
-							<div class="big-triangle"></div>
-							<div class="big-triangle2"></div>
-							<a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
-							<div class="team-description">
-								<div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-phone"></i>
-										</span>
-										<span>(0)-123-456-789</span>
-									</div>
-									<div class="team-desc-line">
-										<span class="team-icon-circle">
-											<i class="fa fa-envelope fa-sm"></i>
-										</span>
-										<span>apartment@domain.tld</span>
-									</div>
-									<div class="team-social-cont">
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-google-plus"></i>
-											</a>
-										</div>
-										<div class="team-social">
-											<a class="team-icon-circle" href="#">
-												<i class="fa fa-skype"></i>
-											</a>
-										</div>
-									</div>
-									<p class="team-text">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									</p>
-							  </div>
-							</div>
-						</div>
-						<div class="team-name">
-							<h5>agent</h5>
-							<h4>Joanne Doe<span class="special-color">.</span></h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	
 	<section class="testimonials parallax">
 		<div class="container">
@@ -1321,9 +949,8 @@
 						<div class="testimonial">
 							<img src="images/testimonials1.jpg" alt="" class="testimonials-photo" />	
 							<div class="testimonials-content">							
-								<p class="lead">Smith’s Family</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								
+								<p class="lead">New Homes</p>
+								<p>This platform help every one to ease their work and also this is the best real estate website till date in India it genuinely helps for buyers & sellers and especially for bachelors who are searching for rented house. It is user friendly and their customer service is also great.</p>
 							</div>
 							<div class="big-triangle">							
 								</div>
@@ -1332,8 +959,8 @@
 						<div class="testimonial">
 							<img src="images/testimonials2.jpg" alt="" class="testimonials-photo" />	
 							<div class="testimonials-content">
-								<p class="lead">Meggy Johnson</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p class="lead">Star Realestate</p>
+								<p>I am glad to deal with this genuine and profitable dealers in this website also customer service is excellent. Provides easy transaction with lots of benifites</p>
 								<div class="big-triangle">							
 								</div>
 								<div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
@@ -1342,8 +969,8 @@
 						<div class="testimonial">
 							<img src="images/testimonials3.jpg" alt="" class="testimonials-photo" />
 							<div class="testimonials-content">
-								<p class="lead">Paola Brown &amp; Tommy</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p class="lead">Raj &amp;Realestate</p>
+								<p>Excellent support, though they can be more effective by streamlining their process of connecting buyers to the sellers more effectively.Overall it was a good experience. The relationship manager was helpful in filtering and routing the buyers to me.</p>
 								<div class="big-triangle">							
 								</div>
 								<div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
@@ -1353,324 +980,7 @@
 				</div>
 			</div>
 	</section>
-	
-	<section class="section-light bottom-padding-45 section-top-shadow">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-9">
-					<h5 class="subtitle-margin">hot</h5>
-							<h1>new listings<span class="special-color">.</span></h1>
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					<a href="#" class="navigation-box navigation-box-next" id="grid-offers-owl-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
-					<a href="#" class="navigation-box navigation-box-prev" id="grid-offers-owl-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
-				</div>
-				<div class="col-xs-12">
-					<div class="title-separator-primary"></div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-offers-container">
-			<div class="owl-carousel" id="grid-offers-owl">
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">				
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer1.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">apartment</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">34 Fort Collins, Colorado 80523, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 320 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />3
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />1
-								</div>							
-							</div>	
-							
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map1" class="grid-offer-map"></div>
-							<div class="button">	
-								
-								<a href="" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer2.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">apartment</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">West Fourth Street, New York 10003, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 299 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />48m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />2
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />1
-								</div>							
-							</div>	
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map2" class="grid-offer-map"></div>
-							<div class="button">	
-								<a href="estate-details-right-sidebar.html" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer3.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">apartment</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">E. Elwood St. Phoenix, AZ 85034, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 400 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />93m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />4
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />2
-								</div>							
-							</div>	
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map3" class="grid-offer-map"></div>
-							<div class="button">	
-								<a href="#" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer4.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">house</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">N. Willamette Blvd., Portland, OR 97203, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 800 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />300m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />8
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />3
-								</div>							
-							</div>	
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map4" class="grid-offer-map"></div>
-							<div class="button">	
-								<a href="estate-details-right-sidebar.html" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer5.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">apartment</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">One Brookings Drive St. Louis, Missouri 63130, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 320 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />50m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />2
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />1
-								</div>							
-							</div>	
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map5" class="grid-offer-map"></div>
-							<div class="button">	
-								<a href="estate-details-right-sidebar.html" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="grid-offer-col">
-					<div class="grid-offer">
-						<div class="grid-offer-front">
-							<div class="grid-offer-photo">
-								<img src="images/grid-offer7.jpg" alt="" />
-								<div class="type-container">
-									<div class="estate-type">house</div>
-									<div class="transaction-type">sale</div>
-								</div>
-							</div>
-							<div class="grid-offer-text">
-								<i class="fa fa-map-marker grid-offer-localization"></i>
-								<div class="grid-offer-h4"><h4 class="grid-offer-title">One Neumann Drive Aston, Philadelphia 19014, USA</h4></div>
-								<div class="clearfix"></div>
-								<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et [...]</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="price-grid-cont">
-								<div class="grid-price-label pull-left">Price:</div>
-								<div class="grid-price pull-right">
-									$ 500 000
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="grid-offer-params">
-								<div class="grid-area">
-									<img src="images/area-icon.png" alt="" />210m<sup>2</sup>
-								</div>
-								<div class="grid-rooms">
-									<img src="images/rooms-icon.png" alt="" />6
-								</div>
-								<div class="grid-baths">
-									<img src="images/bathrooms-icon.png" alt="" />2
-								</div>							
-							</div>	
-						</div>
-						<div class="grid-offer-back">
-							<div id="grid-map6" class="grid-offer-map"></div>
-							<div class="button">	
-								<a href="estate-details-right-sidebar.html" class="button-primary">
-									<span>read more</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-search"></i></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<%- include("newlisting") -%>
 	
 	<!-- <section class="section-dark">
 		<div class="container">
@@ -1689,7 +999,7 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-6 blog-grid1-left-col">
 					<article class="blog-grid1-item zoom-cont">
-						<figure class=""><a href="blog-right-sidebar.html"><img src="images/blog-grid1a.jpg" alt="" class="zoom" /></a></figure>
+						<figure class=""><a href="blog-right-sidebar.html"><img src="images/featured-offer1.jpg" alt="" class="zoom" /></a></figure>
 						<div class="blog-grid1-post-content">
 							<div class="blog-grid1-topline">
 								<div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
@@ -1708,7 +1018,7 @@
 				</div>
 				<div class="col-md-12 col-lg-6 blog-grid1-right-col">
 					<article class="blog-grid1-item zoom-cont">
-						<figure class=""><a href="blog-right-sidebar.html"><img src="images/blog-grid1b.jpg" alt="" class="zoom" /></a></figure>
+						<figure class=""><a href="blog-right-sidebar.html"><img src="images/featured-offer2.jpg" alt="" class="zoom" /></a></figure>
 						<div class="blog-grid1-post-content">
 							<div class="blog-grid1-topline">
 								<div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
@@ -1741,7 +1051,7 @@
 								<div class="blog-grid1-triangle"></div>
 							</a>
 						</div>
-						<figure class=""><a href="blog-right-sidebar.html"><img src="images/blog-grid1e.jpg" alt="" class="zoom" /></a></figure>
+						<figure class=""><a href="blog-right-sidebar.html"><img src="images/featured-offer3.jpg" alt="" class="zoom" /></a></figure>
 					</article>
 				</div>
 				<div class="col-md-12 col-lg-6 blog-grid1-right-col">
@@ -1760,13 +1070,13 @@
 								<div class="blog-grid1-triangle"></div>
 							</a>
 						</div>
-						<figure class=""><a href="blog-right-sidebar.html"><img src="images/blog-grid1d.jpg" alt="" class="zoom" /></a></figure>
+						<figure class=""><a href="blog-right-sidebar.html"><img src="images/featured-offer4.jpg" alt="" class="zoom" /></a></figure>
 					</article>
 				</div>
 			</div>
 		</div>
-	</section> -->
-	
+	</section>
+	 -->
 	<section class="section-light top-padding-45 bottom-padding-45">
 		<div class="container">
 			<div class="row count-container">
@@ -1809,31 +1119,30 @@
 			</div>
 		</div>
 	</section>	
+	
+	
+	 <%if(verify){%>
+		<script>
+			window.onload = function(){
+		  document.getElementById('registermodalcheck').click();
+		  
+		var scriptTag = document.createElement("script");
+		scriptTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
+		document.getElementsByTagName("head")[0].appendChild(scriptTag);
+		
+		}
+		
+		
+		</script>
+		
+		<%};%>
+	 
+	
 
 
-
-
-
-
-
-<!-- jQuery  -->
-<script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
-<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
-
-<!-- Bootstrap-->
-<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
-
-<!-- Google Maps -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?AIzaSyBGnmdXgkR-s8DRXKlAek2kJftTvAB3V7Q&amp;sensor=false&amp;libraries=places"></script>
-
-<!-- plugins script -->
-<script type="text/javascript" src="js/plugins.js"></script>
-
-<!-- template scripts -->
-<script type="text/javascript" src="mail/validate.js"></script>
-<script type="text/javascript" src="js/apartment.js"></script>
 
 <%- include("login") -%>
 <%- include("register") -%>
+
 <%- include("forget") -%>
 <%- include("partials/footer") -%>

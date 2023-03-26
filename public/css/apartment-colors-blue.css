@@ -6,7 +6,7 @@ Author: Jan Skwara - http://themeforest.net/user/johnnychaos
 
 
 body {
-	background: #3797dd url(../images/bg-pattern5.jpg) repeat;
+	background: #beaf87 url(../images/bg-pattern5.jpg) repeat;
 	font-family: 'Roboto', 'Arial', sans-serif;
 }
 
@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
 input.simple-search-input,
 .sidebar-blog-title,
 .sidebar-blog-title a,
-input.main-input,
+
 input[type="checkbox"].main-checkbox:checked + label,
 input[type="checkbox"].main-checkbox + label,
 textarea.main-input,
@@ -295,37 +295,24 @@ textarea.main-input,
 }
 input.main-input{
 	background-color: white;
+	color:#252526
 }
 textarea.main-input{
 	background-color: white;
 }
-.container1{
-	background-color: #252526;
+
+  .searchrow {
 	display: flex;
-	width:78%;
-	height: 30%; 
-	
-	margin-left: 20%;
-	
-}
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: wrap;
 
-.container2{
-	width:30%;
-	display: block;
-	height: 30%; 
+  }
+  
+  .cardsearch:hover {
+	transform: scale(1.05);
 	
-
-	/* position:absolute; */
-}
-.container3{
-	padding: 20px;
-	width:70%;
-	display:block;
-	/* position: fixed; */
-	
-}
-
-
+  }
 
 input.simple-search-input::-webkit-input-placeholder,
 input.simple-search-input::-moz-placeholder,
@@ -644,7 +631,21 @@ header.header2 .top-icon-circle:hover,
 header.header3 .top-icon-circle:hover {
 	background: #cecece;
 }
-
+.marker {
+	background-image: url('images\pin-apartment.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	}
+	.mapboxgl-popup {
+	max-width: 200px;
+	}
+	.mapboxgl-popup-content {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	}
 .slide-desc, 
 .slide-desc-params,
 .adv-search-section,
@@ -738,7 +739,7 @@ html.no-pointerevents.no-touchevents .list-agency:hover .list-agency-separator {
 }
 
 .loader-bg {
-	background: #ffffff url(../images/loader.png) no-repeat center center;
+	background: #252526 url(../images/loader.png) no-repeat center center;
 }
 
 header.header2.header-dark, 
@@ -955,7 +956,7 @@ section.rooms {
 .details-map,
 .agent-social-bar,
 .agent-icon-circle,
-input.main-input,
+
 input[type="checkbox"].main-checkbox + label span,
 textarea.main-input,
 .form-submit-cont,
@@ -980,6 +981,11 @@ textarea.main-input,
 	color: white;
 	background-color: #252526;
 	
+	
+}
+
+input.main-input{
+	background-color: white;
 }
 
 header.header2 .top-icon-circle,
@@ -1442,7 +1448,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 }		
 
 .button-secondary .button-triangle {
-	border-color: transparent transparent #3797dd transparent;
+	border-color: transparent transparent #beaf87 transparent;
 }
 
 .button-secondary .button-triangle2 {
@@ -1470,7 +1476,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 }
 
 .price-table-triangle2 {
-	border-color: transparent transparent #3797dd transparent;
+	border-color: transparent transparent #beaf87 transparent;
 }
 
 .price-table-ul li {
@@ -1478,7 +1484,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 }
 
 .price-table-secondary .price-table-triangle {
-	border-color: transparent transparent transparent #3797dd;
+	border-color: transparent transparent transparent #beaf87;
 }
 
 .price-table-secondary .price-table-triangle2 {
@@ -1486,7 +1492,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 }
 
 .price-table-secondary .price-table-ul li {
-	border-bottom: 1px solid #4aa8ec;
+	border-bottom: 1px solid white;
 }
 
 .list-agency-right {
@@ -1502,7 +1508,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 }
 
 .list-agency .small-triangle  {
-	border-color: transparent transparent #3797dd transparent;
+	border-color: transparent transparent #beaf87 transparent;
 }
 
 .small-triangle2 {
@@ -1638,5 +1644,12 @@ li.ap-submenu {
 @media only screen and (max-width: 480px) {
 	.simple-search-cont input.simple-search-input {
 		border-bottom: 1px solid #ebebeb;
+	}
+	.searchrow{
+		display: block;
+		
+	}
+	.searchfeature{
+		width: 100%;
 	}
 }

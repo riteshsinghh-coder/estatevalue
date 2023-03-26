@@ -8,166 +8,189 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="css/apartment-layout.css">
+    <link id="skin" rel="stylesheet" type="text/css" href="css/apartment-colors-blue.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">    
+
+	<link rel="stylesheet" href="css/font-awesome.min.css">  
+	
+	
+<script src="https://kit.fontawesome.com/c349b9fb52.js" crossorigin="anonymous"></script>
 
   <title>Pricing Table</title>
-  <style>
-    .card {
-      border:none;
-      padding: 10px 50px;
-    }
-
-    .card::after {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .card:hover {
-
-
-      transform: scale(1.02, 1.02);
-      -webkit-transform: scale(1.02, 1.02);
-      backface-visibility: hidden; 
-      will-change: transform;
-      box-shadow: 0 1rem 3rem rgba(0,0,0,.75) !important;
-    }
-
-    .card:hover::after {
-      opacity: 1;
-    }
-
-    .card:hover .btn-outline-primary{
-      color:white;
-      background:#007bff;
-    }
-
-  </style>
+  
+   
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <body>
-
-
-  <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
-    <div class="container p-5">
-      <div class="row">
-        <form action="/order" method="post">
-        
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Basic</h5>
-                <br>
-                <span class="h2">₹1399</span>/month
-                <input type="hidden" name="amount"  value="1399">
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Organic Through Website -Spend 20% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Mail Promotion -Spend 30% of Your Money </li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Facebook -Spend 50% of Your Money</li>
-              <br><br>
-            </ul>
-            <div class="card-body text-center">
-              <button type="submit" id='rzp-button1' class="btn btn-outline-primary btn-lg"  style="border-radius:30px">pay</button>
-           
-
-            </div>
-          </div>
-        </div>
-      </form>
+	<form action="/order1" id="pay1" method="post" >
+		<input type="hidden" name="amount1"  value="1499">
+	</form>
+	<!-- <form action="/order2" id="pay2" method="post" >
+		<input type="hidden" name="amount2"  value="2099">
+	</form>
+	<form action="/order3" id="pay3" method="post" >
+		<input type="hidden" name="amount3"  value="2799">
+	</form> -->
+	<section class="section-light" >
   
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Standard</h5>
-                <br>
-                <span class="h2">₹2199</span>/month 
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Facebook Add- Spend 50% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Google Add- Spend 30% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Organic Through Website- Spend 20% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Mail Promotion- Free</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Premium</h5>
-                <br>
-                <span class="h2">₹2699</span>/month
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Facebook and Instagram Add -Spend 50% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Google Adds -Spend 50% of Your Money</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Organic Through Website -Free</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg>Featured on our Website</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-            </div>
-          </div>
-        </div>
-      </div>    
+		<div class="container" >
+			<div class="row " >
+        <div style="display:flex; flex-direction: row;
+		justify-content: space-around;
+		flex-flow: wrap;
+	">
+        
+				<div class="col-xs-12 col-sm-6 col-md-4" >
+					<div class="price-table">
+            <h5 style="color:white;">Offer applicable For 100 Property only providing facilities of Gold</h5>
+						<div class="price-table-header">
+							<h5 class="second-color subtitle-margin"></h5>
+							<h2 class="second-color">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBronze<span class="third-color">.</span></h2>
+							<div class="price-table-triangle"></div>
+							<div class="price-table-icon">₹1499</div>
+             
+						</div>
+						<div class="price-table-body">
+							<ul class="price-table-ul">
+                
+								<li>45 Days -Validity</li>
+								<li>Map Access</li> 
+								<li><s>200 -Email Promotion</s><br>1250 -Email Promotion</li>
+								<li><s>Advertisement</s><br>Advertisement -4x </li>
+								<li>Feature</li>
+								
+							</ul>
+						</div>
+						<div class="price-table-footer">
+						<div class="price-table-triangle2"></div>
+						<button id='rzp-button1' onclick="event.preventDefault();  document.getElementById('pay1').submit();" class="button-primary button-shadow pull-right">
+							<span>Pay</span>
+							<div class="button-triangle"></div>
+							<div class="button-triangle2"></div>
+							<div class="button-icon"><i class="fa-2x fa-solid fa-angle-right"></i></div>
+						</button>	
+						</div>
+					</div>
+				</div>
+    
+      <br>
+     
+				<div class="col-xs-12 col-sm-6 col-md-4 margin-top-xs-30" style="opacity:0.2;" >
+					<div class="price-table price-table-secondary">
+						<div class="price-table-header">
+							<h5 class="subtitle-margin"></h5>
+							<h2 class="second-color">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSilver<span class="special-color">.</span></h2>
+							<div class="price-table-triangle"></div>
+							<div class="price-table-icon">₹2199</div>
+              
+						</div>
+						<div class="price-table-body">
+							<ul class="price-table-ul">
+                <li>45 Days -Validity</li>
+				<li>Map Access</li>
+								<li>650 -Email Promotion</li>
+								<li>Advertisement -2x</li>
+							</ul>
+						</div>
+						<div class="price-table-footer">
+						<div class="price-table-triangle2"></div>
+						<!-- <button class="button-secondary button-shadow pull-right">
+							<span>Pay</span>
+							<div class="button-triangle"></div>
+							<div class="button-triangle2"></div>
+							<div class="button-icon"><i class="fa-2x fa-solid fa-angle-right"></i></div>
+						</button>	 -->
+						</div>
+					</div>
+				</div>
+      
+      <br>
+      
+				<div class="col-xs-12 col-md-4 margin-top-xs-30 margin-top-sm-30" style="opacity:0.2;">
+					<div class="price-table">
+						<div class="price-table-header">
+							<h5 class="second-color subtitle-margin"></h5>
+							<h2 class="second-color">&nbsp&nbsp&nbsp&nbspGold<span class="third-color">.</span></h2>
+							<div class="price-table-triangle"></div>
+							<div class="price-table-icon">₹2799</div>
+              
+						</div>
+						<div class="price-table-body">
+							<ul class="price-table-ul">
+								<li>45 Days -Validity</li>
+								<li>Map Access</li>
+								<li>1250 -Email Promotion</li>
+								<li>Advertisement -4x</li>
+								<li>Feature</li>
+							</ul>
+						</div>
+						<div class="price-table-footer">
+						<div class="price-table-triangle2"></div>
+						<!-- <button class="button-primary button-shadow pull-right">
+							<span>Pay</span>
+							<div class="button-triangle"></div>
+							<div class="button-triangle2"></div>
+							<div class="button-icon"><i class="fa-2x fa-solid fa-angle-right"></i></div>
+						</button>	 -->
+						</div>
+					</div>
+				</div>
+      </form>
     </div>
+			</div>
+		</div>
+	</section>	
+		
+
     <script>
-      axios.post('/order').then(function(info){
-        console.log(info);
+      axios.post('/order1').then(function(info){
+        // console.log(info);
         var options = {
     "key": "rzp_test_sAcIf5YjC4R3TX", // Enter the Key ID generated from the Dashboard
-    "amount": "100", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "amount": "149900", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
-    "name": "Acme Corp",
+    "name": "New Homes",
     "description": "Test Transaction",
     "image": "images\slides\New Homes Logo - Original - 5000x5000.png",
     "order_id": info.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "callback_url": "/send",
+	"callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+        var settings = {
+          "url": "/api/payment/verify",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+            "data": JSON.stringify({response}),
+          }
+    },
     "theme": {
         "color": "#beaf87"
-    }
+    },
+    "prefill": {
+        "email": "<%=email%>",
+        "contact": "<%=phoneno%>"
+    },
 };
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
 var rzp1 = new Razorpay(options);
 document.getElementById('rzp-button1').onclick = function(e){
     rzp1.open();
@@ -175,6 +198,105 @@ document.getElementById('rzp-button1').onclick = function(e){
 }
 
       })
+//       axios.post('/order2').then(function(info){
+//         // console.log(info);
+//         var options = {
+//     "key": "rzp_test_sAcIf5YjC4R3TX", // Enter the Key ID generated from the Dashboard
+//     "amount": "219900", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//     "currency": "INR",
+//     "name": "Acme Corp",
+//     "description": "Test Transaction",
+//     "image": "images\slides\New Homes Logo - Original - 5000x5000.png",
+//     "order_id": info.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    
+//     "handler": function (response){
+//         alert(response.razorpay_payment_id);
+//         alert(response.razorpay_order_id);
+//         alert(response.razorpay_signature)
+//         var settings = {
+//           "url": "/api/payment/verify",
+//           "method": "POST",
+//           "timeout": 0,
+//           "headers": {
+//             "Content-Type": "application/json"
+//           },
+//             "data": JSON.stringify({response}),
+//           }
+//     },
+//     "theme": {
+//         "color": "#beaf87"
+//     },
+//     "prefill": {
+//         "email": "<%=email%>",
+//         "contact": "<%=phoneno%>"
+//     },
+// };
+// var rzp2 = new Razorpay(options);
+// rzp2.on('payment.failed', function (response){
+//         alert(response.error.code);
+//         alert(response.error.description);
+//         alert(response.error.source);
+//         alert(response.error.step);
+//         alert(response.error.reason);
+//         alert(response.error.metadata.order_id);
+//         alert(response.error.metadata.payment_id);
+// });
+// var rzp2 = new Razorpay(options);
+// document.getElementById('rzp-button2').onclick = function(f){
+//     rzp2.open();
+//     f.preventDefault();
+// }
+
+//       })
+//       axios.post('/order3').then(function(info){
+//         // console.log(info);
+//         var options = {
+//     "key": "rzp_test_sAcIf5YjC4R3TX", // Enter the Key ID generated from the Dashboard
+//     "amount": "269900", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//     "currency": "INR",
+//     "name": "New Homes",
+//     "description": "Test Transaction",
+//     "image": "images\slides\New Homes Logo - Original - 5000x5000.png",
+//     "order_id": info.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//      "handler": function (response){
+//         alert(response.razorpay_payment_id);
+//         alert(response.razorpay_order_id);
+//         alert(response.razorpay_signature)
+//         var settings = {
+//           "url": "/api/payment/verify",
+//           "method": "POST",
+//           "timeout": 0,
+//           "headers": {
+//             "Content-Type": "application/json"
+//           },
+//             "data": JSON.stringify({response}),
+//           }
+//     },
+//     "theme": {
+//         "color": "#beaf87"
+//     },
+//     "prefill": {
+//         "email": "<%=email%>",
+//         "contact": "<%=phoneno%>"
+//     }
+// };
+// var rzp3 = new Razorpay(options);
+// rzp3.on('payment.failed', function (response){
+//         alert(response.error.code);
+//         alert(response.error.description);
+//         alert(response.error.source);
+//         alert(response.error.step);
+//         alert(response.error.reason);
+//         alert(response.error.metadata.order_id);
+//         alert(response.error.metadata.payment_id);
+// });
+// var rzp3 = new Razorpay(options);
+// document.getElementById('rzp-button3').onclick = function(g){
+//     rzp3.open();
+//     g.preventDefault();
+// }
+
+//       })
       </script>
   </body>
 

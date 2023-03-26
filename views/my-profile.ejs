@@ -13,7 +13,7 @@
 		</div>
     </section>
 	
-	<form action="/moredetails" method="post">
+	<form action="/moredetails" method="post" enctype="multipart/form-data">
 	
 	<section class="section-light section-top-shadow">
 		<div class="container">
@@ -30,17 +30,17 @@
 					<div class="row margin-top-60">
 						<div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-3 col-md-4">	
 							<div class="agent-photos">
-								<img src="images/agent3.jpg" id="agent-profile-photo" class="img-responsive" alt="" />
+								<img src="uploads/<%=image%>" id="agent-profile-photo" class="img-responsive" alt="" required />
 								<div class="change-photo">
 									<i class="fa fa-pencil fa-lg"></i>
-									<input type="file" name="agent-photo" id="agent-photo" />
+									<input type="file" name="myfiles" accept="image/*" single id="agent-photo" multiple="1" />
 								</div>
 								<input type="text" disabled="disabled" id="agent-file-name" class="main-input" />
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-9 col-md-8">
 							<div class="labelled-input">
-								<label for="first-name">Name</label><input id="first-name" name="name" type="text" class="input-full main-input color" placeholder="Company Name" value="<%=companyname%>" required>
+								<label for="first-name">Name</label><input id="first-name" name="name" type="text" class="input-full main-input color" placeholder="Company Name or Your Name" value="<%=companyname%>" required>
 								<div class="clearfix"></div>
 							</div>
 							
@@ -59,7 +59,7 @@
 							<div class="col-xs-12">
 								<div class="labelled-textarea">
 									<label for="description">Description</label>
-									<textarea id="description" name="description" type="text" class="input-full main-input color" placeholder="Give Decription" value="<%=description%>"></textarea>
+									<textarea id="description" name="description" type="text" class="input-full main-input color" minlength="50" placeholder="Give Decription"><%=description%></textarea>
 								</div>
 							</div>
 							</div>
@@ -73,7 +73,7 @@
 										</span>
 										Facebook
 									</label>
-									<input id="facebook" name="facebook" type="text" class="input-full main-input" placeholder="http://facebook.url" value="<%=facebook%> " required/>
+									<input id="facebook" name="facebook" type="text" class="input-full main-input" placeholder="http://facebook.url" value="<%=facebook%> " />
 									<div class="clearfix"></div>
 								</div>
 								<div class="labelled-input-short">
@@ -95,7 +95,7 @@
 										</span>
 										Instagram
 									</label>
-									<input id="twitter" name="instagram" type="text" class="input-full main-input" placeholder="http://instagram.url" value="<%=instagram%>" required />
+									<input id="twitter" name="instagram" type="text" class="input-full main-input" placeholder="http://instagram.url" value="<%=instagram%>" />
 									<div class="clearfix"></div>
 								</div>
 								
@@ -126,6 +126,19 @@
 								</div>
 							</div>
 							</div> -->
+							<br>
+							<p class="negative-margin bold-indent"><p>
+								<div id="geocoder"></div>
+								<br>
+								<div id="promap"class="submit-property-map"></div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-6 margin-top-15">
+										<input id="longitude" name="longitude" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly" />
+									</div>
+									<div class="col-xs-12 col-sm-6 margin-top-15">
+										<input id="latitude" name="latitude" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly" />
+									</div>
+								</div> 
 							<div class="row margin-top-15">
 							<div class="col-xs-12">
 								<div class="center-button-cont center-button-cont-border">
@@ -143,73 +156,8 @@
 								
 							</div>
 							</form>
-							<section>
-						<%if (Item!=0){	%>
-							<%Item.forEach(element=>{%>
-								<div class="row grid-offer-row">
-									<div class="col-xs-12 col-sm-6 col-lg-4 grid-offer-col">
-										<div class="grid-offer">
-											<div class="grid-offer-front">
-											
-												<div class="grid-offer-photo">
-													<img src='uploads\<%=element.image[0]%>'  alt="" />
-													<div class="type-container">
-														<div class="estate-type">apartment</div>
-														<div class="transaction-type">sale</div>
-													</div>
-												</div>
-												<div class="grid-offer-text">
-													<i class="fa fa-map-marker grid-offer-localization"></i>
-													<div class="grid-offer-h4"><h4 class="grid-offer-title"><%=element.submitregion%>, <%=element.submitcity%>, <%=element.submitstate%>, INDIA</h4></div>
-													<div class="clearfix"></div>
-													<p><%=element.submitmessage.slice(0,100)%></p>
-													<div class="clearfix"></div>
-												</div>
-												<div class="price-grid-cont">
-													<div class="grid-price-label pull-left">Price:</div>
-													<div class="grid-price pull-right">
-														<%=element.submitprice%>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-												<div class="grid-offer-params">
-													<div class="grid-area">
-														<img src="images/area-icon.png" alt="" /><%=element.submitarea%>m<sup>2</sup>
-													</div>
-													<div class="grid-rooms">
-														<img src="images/rooms-icon.png" alt="" /><%=element.submitbedroom%>
-													</div>
-													<div class="grid-baths">
-														<img src="images/bathrooms-icon.png" alt="" /><%=element.submitbathroom%>
-													</div>											
-												</div>								
-											</div>
-											<div class="grid-offer-back">
-												<div id="grid-map1" class="grid-offer-map"></div>
-												<div class="button">	
-													<button style="all: unset; margin-left: 60%;" class="button" >
-													<a href="estate-details-right-sidebar.html" class="button-primary">
-														<span>read more</span>
-														<div class="button-triangle"></div>
-														<div class="button-triangle2"></div>
-														<div class="button-icon"><i class="fa fa-search"></i></div>
-													</a>
-													</button>
-												</div>
-											</div>	
-										</form>
-																			
-										</div>							
-									</div>
-									
-											
-							
-						<%});%>
-						<%}%>
-									</section>
 						
-					</div>	
-							
+						</div>		
 
 				<div class="col-xs-12 col-md-3 col-md-pull-9">
 					<div class="sidebar-left">
@@ -218,7 +166,7 @@
 						
 						<div class="profile-info margin-top-60">
 							<div class="profile-info-title negative-margin"><%=companyname%></div>
-							<img src="images/comment-photo2.jpg" alt="" class="pull-left" />
+							<img style="width:100%;" src="uploads/<%=image%>" alt="" class="pull-left"  />
 							<!-- <div class="profile-info-text pull-left">
 								<p class="subtitle-margin">Agent</p>
 								<p class="">42 Estates</p>
@@ -235,97 +183,150 @@
 								<div class="button-icon"><i class="fa fa-th-list"></i></div>
 							</a>
 						</div> -->
-						<form action="/my-profile" id="FG" method="post">
+						<form action="/trusted" method="post">
+							<input type="hidden" name="email" value="<%=email%>"/>
 						<div class="center-button-cont margin-top-15">
-							<a href="/moredetails" onclick="event.preventDefault();  document.getElementById('FG').submit();" class="button-primary button-shadow button-full">
+							<button type="submit" class="button-primary button-shadow button-full">
+								
 								<span>My profile</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-user"></i></div>
-							</a>
+							</button>
 						</div>
 					</form>
-					<form action="/header" id="GFG" method="post">
+					<form action="/myproperty" id="app" method="post">
 						<div class="center-button-cont margin-top-15">
-							<a href="/header" onclick="event.preventDefault();  document.getElementById('GFG').submit();" class="button-alternative button-shadow button-full">
-								<span>add property</span>
+							<a href="/myproperty" onclick="event.preventDefault();  document.getElementById('app').submit();" class="button-alternative button-shadow button-full">
+								<span>My property</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="jfont fa-lg">&#xe804;</i></div>
+								<div class="button-icon"><i class="fa-2x fa-solid fa-house"></i></div>
 							</a> 
 						
 						</div>
 					</form>
-					
-					
-						<h3 class="sidebar-title margin-top-60">Your offers<span class="special-color">.</span></h3>
-						<div class="title-separator-primary"></div>
-						<form action="/search" id="GF" method="post">
 						
-						<div class="sidebar-select-cont">
-							<select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-								<option>For sale</option>
-								<option>For rent</option>
-							</select>
-							<select name="contry1" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
-								<%ApartmentState.forEach(element=>{%>
-									<option class="a" value="<%=element%>"><%=element%></option>
-									<br>
-								<%});%>
-							</select>
-							<select name="city1" class="bootstrap-select" title="City:" multiple data-actions-box="true">
-								<%ApartmentCity.forEach(element=>{%>
-									<option class="a" value="<%=element%>"><%=element%></option>
-									<br>
-										
-									<%});%>
-							</select>					
-							<select name="location1" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
-								<%ApartmentRegion.forEach(element=>{%>
-									
-									<option class="a" value="<%=element%>"><%=element%></option>
-									<br>
-										
-									<%});%>
-							</select>
-						</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-price-sidebar-value" class="adv-search-label">Price:</label>
-								<span>$</span>
-								<input type="text" id="slider-range-price-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-price-sidebar" data-min="0" data-max="300000" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-area-sidebar-value" class="adv-search-label">Area:</label>
-								<span>m<sup>2</sup></span>
-								<input type="text" id="slider-range-area-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-area-sidebar" data-min="0" data-max="180" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">Bedrooms:</label>
-								<input type="text" id="slider-range-bedrooms-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-bedrooms-sidebar" data-min="1" data-max="10" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-bathrooms-sidebar-value" class="adv-search-label">Bathrooms:</label>
-								<input type="text" id="slider-range-bathrooms-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-bathrooms-sidebar" data-min="1" data-max="4" class="slider-range"></div>
-							</div>
-							
-						<div class="sidebar-search-button-cont">
-							<a href="/search" onclick="event.preventDefault();  document.getElementById('GF').submit();"  class="button-primary">
-								<span>search</span>
-								<div class="button-triangle"></div>
-								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
-							</a>
-						</div>
-						</form>
-					</div>
+                <div class="sidebar-left">
+                    
+                   
+                    <div class="sidebar-title-cont">
+                        <h4 class="sidebar-title">featured offers<span class="special-color">.</span></h4>
+                        <div class="title-separator-primary"></div>
+                    </div>
+                    <div class="sidebar-featured-cont" >
+                        <div class="sidebar-featured" >
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+								<img src='uploads\<%=featured[0].image[0]%>'  alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[0].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[0].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[0].submitregion%>, <%=featured[0].submitcity%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[0].submitprice%> </div>
+                            <div class="clearfix"></div>						
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[1].image[0]%>" alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[1].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[1].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[1].submitregion%>, <%=featured[1].submitcity%>, <%=featured[1].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[1].submitprice%> </div>
+                            <div class="clearfix"></div>						
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[2].image[0]%>" alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[2].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[2].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[2].submitregion%>, <%=featured[2].submitcity%>, <%=featured[2].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[2].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[3].image[0]%>" alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[3].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[3].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[3].submitregion%>, <%=featured[3].submitcity%>, <%=featured[3].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[3].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[4].image[0]%>"  alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[4].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[4].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[4].submitregion%>, <%=featured[4].submitcity%>, <%=featured[4].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[4].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[5].image[0]%>"  alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[5].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[5].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[5].submitregion%>, <%=featured[5].submitcity%>, <%=featured[5].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[5].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[6].image[0]%>"  alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[6].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[6].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[6].submitregion%>, <%=featured[6].submitcity%>, <%=featured[6].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[6].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="uploads/<%=featured[7].image[0]%>"  alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate"><%=featured[7].submitpropertytype.slice(0,1)%></div>
+                                    <div class="sidebar-featured-transaction"><%=featured[7].submittransaction.slice(4,5)%></div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html"><%=featured[7].submitregion%>, <%=featured[7].submitcity%>, <%=featured[7].submitstate%></a></div>
+                            <div class="sidebar-featured-price">$<%=featured[7].submitprice%></div>
+                            <div class="clearfix"></div>					
+                        </div>
+                        <!-- <div class="sidebar-featured">
+                            <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
+                                <img src="images/sidebar-featured3.jpg" alt="" />
+                                <div class="sidebar-featured-type">
+                                    <div class="sidebar-featured-estate">A</div>
+                                    <div class="sidebar-featured-transaction">S</div>
+                                </div>
+                            </a>
+                            <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">E. Elwood St. Phoenix, AZ 85034, USA</a></div>
+                            <div class="sidebar-featured-price">$ 410 000</div>
+                            <div class="clearfix"></div>					
+                        </div> -->
+                    </div>
+                    
+                </div>
+            </div>
 				</div>
 			</div>
 		</div>
@@ -341,24 +342,53 @@
 <div class="move-top">
 	<div class="big-triangle-second-color"></div>
 	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
-</div>	
+</div>
 
-    <script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
-	
-<!-- Bootstrap-->
-    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+<script>
+    
+		mapboxgl.accessToken = 'pk.eyJ1Ijoicml0ZXNoa3VtYXJzaW5naCIsImEiOiJjbDhkYm1ubnEwcm8yM3hxOWpneWU0d25wIn0.cpLNiwhiFrTD7QkkAyMX3Q';
+		var map = new mapboxgl.Map({
+		  container: 'promap',
+		  style: 'mapbox://styles/mapbox/streets-v11',
+		  center: [77.1025,28.7041],
+			zoom: 14,
+			streetViewControl: true,
+		});
+			map.addControl(new mapboxgl.GeolocateControl({
+				positionOption:{
+					enableHighAccuracy:true
+				},
+				trackUserLocation:true
+			}))
+			map.addControl(new mapboxgl.NavigationControl());
+			const geocoder = new MapboxGeocoder({
+				accessToken: mapboxgl.accessToken,
+				mapboxgl: mapboxgl,
+				marker: true,
+				placeholder: 'Search and Mark',
+		
+				});
+			 
+				document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+			
+		map.on('click', (e) => {
+		
+			document.getElementById('latitude').value =
+				(e.lngLat.lat);
+			document.getElementById('longitude').value =
+				(e.lngLat.lng);
+				const marker = new mapboxgl.Marker() 
+		.setLngLat([e.lngLat.lng,e.lngLat.lat]) 
+		.addTo(map); 
+		map.on('click', function() {
+			marker.remove()
+		});  
+		
+		});
+		
 
-<!-- Google Maps -->
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfDCV5hXiPamCIT8_vwGXuzimLQ9MF76g&amp;sensor=false&amp;libraries=places"></script>
-	
-<!-- plugins script -->
-	<script type="text/javascript" src="js/plugins.js"></script>
+	</script>
 
-<!-- template scripts -->
-	<script type="text/javascript" src="mail/validate.js"></script>
-    <script type="text/javascript" src="js/apartment.js"></script>
-	
 	
 <%- include("login") -%>
 <%- include("register") -%>

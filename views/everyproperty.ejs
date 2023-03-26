@@ -1,347 +1,416 @@
 <%- include("partials/header") -%>	
+<meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="<%=every.submitmessage.slice(0,300)%>" />
+<meta property="og:image"         content="uploads/<%=image[0]%>" />
+			<script  src="js/everyproperty.js"></script>
+  			
+    <section class="section-dark no-padding">
+		<!-- Slider main container -->
+		<div id="swiper-gallery" class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">
+				
+					<img class="slide-bg swiper-lazy" style="display: block;  
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height:100%;" src="uploads/<%=image[0]%>" alt="">
+				<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>			
+						</div>
+					</div>
+					
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[1]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-2">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[2]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-3">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+				
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[3]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-4">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+				
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[4]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-5">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[5]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-6">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[6]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-7">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[7]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-8">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[8]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-9">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[9]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-10">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					
+						<div class="slide-bg swiper-lazy">
+						<img style="  display: block;
+						margin-left: auto;
+						margin-right: auto;
+						width: 100%;
+						height:100%;" src="uploads/<%=image[10]%>" alt="">
+						</div>
+					<!-- Preloader image -->
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated gallery-slide-desc-11">
+								<div class="gallery-slide-cont">
+									<div class="gallery-slide-cont-inner">	
+										<div class="gallery-slide-title pull-right">
+											<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+											<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
+										</div>
+										<div class="gallery-slide-estate pull-right hidden-xs">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="gallery-slide-desc-price pull-right">
+										<%=every.submitprice%>
+									</div>	
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
 			
-		
-<section class="section-dark no-padding">
-	<!-- Slider main container -->
-	<div id="swiper-gallery" class="swiper-container">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-		
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[0]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-		
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[1]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[2]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[3]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[4]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[5]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[6]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[7]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[8]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[9]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
-			</div>
-			<div class="swiper-slide">
-				<div class="slide-bg swiper-lazy" style="background-image: url('uploads/<%=image[10]%>');" data-sub-html="<strong>this is a caption 1</strong><br/>Second line of the caption"></div>
-				<!-- Preloader image -->
-				<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-9 col-lg-8 slide-desc-col animated fadeInUp gallery-slide-desc-1">
-							<div class="gallery-slide-cont">
-								<div class="gallery-slide-cont-inner">	
-									<div class="gallery-slide-title pull-right">
-										<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
-										<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%><span class="special-color">.</span></h3>
-									</div>
-									<div class="gallery-slide-estate pull-right hidden-xs">
-										<i class="fa fa-home"></i>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="gallery-slide-desc-price pull-right">
-									<%=every.submitprice%>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>			
-					</div>
-				</div>
-				
+			<div class="slide-buttons slide-buttons-center">
+				<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
+				<div id="slide-more-cont"></div>
+				<a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div></a>
 			</div>
 			
-		<div class="slide-buttons slide-buttons-center">
-			<a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
-			<div id="slide-more-cont"></div>
-			<a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
 		</div>
 		
-	</div>
-	</section>
+    </section>
 	<section class="thumbs-slider section-both-shadow">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-1">
-					<a href="#" class="thumb-box thumb-prev pull-left"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-left"></i></div></a>
+					<a href="#" class="thumb-box thumb-prev pull-left"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i style="color:white" class=" fa-2x fa-solid fa-chevron-left"></i></div></a>
 				</div>
 				<div class="col-xs-10">
 					<!-- Slider main container -->
@@ -349,59 +418,43 @@
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<!-- Slides -->
-								<div class="swiper-slide">
-									<img class="slide-thumb"  src='uploads/<%=image[0]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb"  src='uploads/<%=image[1]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb"  src='uploads/<%=image[2]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb"src='uploads/<%=image[3]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[4]%>' alt="">
-								</div>
-								<br>
-
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[5]%>'alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb"src='uploads/<%=image[6]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[7]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[8]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[9]%>' alt="">
-								</div>
-								<br>
-								<div class="swiper-slide">
-									<img class="slide-thumb" src='uploads/<%=image[10]%>' alt="">
-								</div>
-								<br>
-								
+							<div class="swiper-slide"  >
+								<img class="slide-thumb" src="uploads/<%=image[0]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[1]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[2]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[3]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[4]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[5]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[6]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[7]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[8]%>" style="width:100px; height:85px;" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img class="slide-thumb" src="uploads/<%=image[9]%>" style="width:100px; height:85px;"  alt="">
 							</div>
 							
-					</div>
+							
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-1">
-					<a href="#" class="thumb-box thumb-next pull-right"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="fa-solid fa-chevron-right"></i></div></a>
+					<a href="#" class="thumb-box thumb-next pull-right"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i style="color:white" class="fa-2x fa-solid fa-chevron-right"></i></div></a>
 				</div>
 			</div>
 		</div>
@@ -416,15 +469,15 @@
 								<i class="fa fa-home"></i>
 							</div>
 							<div class="details-title pull-left">
-								<h5 class="subtitle-margin"><%=every.submitpropertytype%> <%=every.submittransaction%></h5>
-								<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%>, <%=every.submitstate%>, INDIA<span class="special-color">.</span></h3>
+								<h5 class="subtitle-margin"><%=every.submitpropertytype%>, <%=every.submittransaction%></h5>
+								<h3><%=every.landmark%>, <%=every.submitregion%>, <%=every.submitcity%>, <%=every.submitstate%><span class="special-color">.</span></h3>
 							</div>
 							<div class="clearfix"></div>	
 							<div class="title-separator-primary"></div>
 							<p class="details-desc"><%=every.submitmessage%></p>
 						</div>
 						<div class="col-xs-12 col-sm-5 col-md-4">
-							<div class="details-parameters-price">₹<%=every.submitprice%></div>
+							<div class="details-parameters-price"><%=every.submitprice%></div>
 							<div class="details-parameters">
 								<div class="details-parameters-cont">
 									<div class="details-parameters-name">area</div>
@@ -491,10 +544,13 @@
 							</ul>
 						</div>
 					</div>
-					<!-- <div class="row margin-top-45">
+					
+					<input id="everylat" type="hidden" class="input-full main-input" value="<%=every.latitude%>" />
+					<input id="everylon" type="hidden" class="input-full main-input" value="<%=every.longitude%>" />
+					<div class="row margin-top-45">
 						<div class="col-xs-12 apartment-tabs">
 							<!-- Nav tabs -->
-							<!-- <ul class="nav nav-tabs" role="tablist">
+							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation" class="active">
 									<a href="#tab-map" aria-controls="tab-map" role="tab" data-toggle="tab">
 										<span>Map</span>
@@ -507,28 +563,28 @@
 										<div class="button-triangle2"></div>
 									</a>
 								</li>
-							</ul> -->
+							</ul>
 								<!-- Tab panes -->
-							<!-- <div class="tab-content">
+							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane active" id="tab-map">
-									<div id="estate-map" class="details-map"></div>
+									<div id="map3" class="details-map"></div>
 								</div>
 								<div role="tabpanel" class="tab-pane" id="tab-street-view">
 									<div id="estate-street-view" class="details-map"></div>
 								</div>
 							</div>
 						</div>
-					</div> --> 
+					</div>
 					<div class="row margin-top-60">
 						<div class="col-xs-12">
-							<h3 class="title-negative-margin">contact the seller<span class="special-color">.</span></h3>
+							<h3 class="title-negative-margin">contact<span class="special-color">.</span></h3>
 							<div class="title-separator-primary"></div>
 						</div>
 					</div>
 					<div class="row margin-top-60">
 						<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
-							<h5 class="subtitle-margin">manager</h5>
-							<h3 class="title-negative-margin">Mark Smith<span class="special-color">.</span></h3>
+							<h5 class="subtitle-margin">New Homes</h5>
+							<h3 class="title-negative-margin"><span class="special-color">.</span></h3>
 							<a href="agent-right-sidebar.html" class="agent-photo">
 								<img src="images/agent3.jpg" alt="" class="img-responsive" />
 							</a>
@@ -537,52 +593,43 @@
 							<div class="agent-social-bar">
 								<div class="pull-left">
 									<span class="agent-icon-circle">
-										<i class="fa fa-phone"></i>
+										<i class="fa fa-phone" style="color: #beaf87;"></i>
 									</span>
-									<span class="agent-bar-text">123-456-789</span>
+									<span class="agent-bar-text">Phone no</span>
 								</div>
 								<div class="pull-left">
 									<span class="agent-icon-circle">
-										<i class="fa fa-envelope fa-sm"></i>
+										<i class="fa fa-envelope fa-sm" style="color:#beaf87"></i>
 									</span>
-									<span class="agent-bar-text">apartment@domain.tld</span>
+									<span class="agent-bar-text">email</span>
 								</div>
 								<div class="pull-right">
 									<div class="pull-right">
-										<a class="agent-icon-circle" href="#">
-											<i class="fa fa-facebook"></i>
+										<a class="agent-icon-circle"  href="<%=facebook%>">
+											<i class="fa fa-facebook" style="color:#beaf87"></i>
 										</a>
 									</div>
 									<div class="pull-right">
-										<a class="agent-icon-circle icon-margin" href="#">
-											<i class="fa fa-twitter"></i>
-										</a>
-									</div>
-									<div class="pull-right">
-										<a class="agent-icon-circle icon-margin" href="#">
-											<i class="fa fa-google-plus"></i>
-										</a>
-									</div>
-									<div class="pull-right">
-										<a class="agent-icon-circle icon-margin" href="#">
-											<i class="fa fa-skype"></i>
+										<a class="agent-icon-circle icon-margin" href="<%=instagram%>">
+											<i class="fa fa-instagram" style="color:#beaf87"></i>
 										</a>
 									</div>
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<form name="contact-from" action="#">
+							<form  action="/sendmail" method="post">
 								<input name="name" type="text" class="input-short main-input" placeholder="Your name" />
-								<input name="phone" type="text" class="input-short pull-right main-input" placeholder="Your phone" />
-								<input name="mail" type="email" class="input-full main-input" placeholder="Your email" />
-								<textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
+								<input name="email" type="hidden" value="<%=every.email%>"class="input-short pull-right main-input"/>
+								<!-- <input name="mobile" type="tel" class="input-full main-input" placeholder="Your phone no" /> -->
+								<textarea name="message" class="input-full agent-textarea main-input" placeholder="Your Problem"></textarea>
 								<div class="form-submit-cont">
-									<a href="#" class="button-primary pull-right">
+									<button type="submit" style="all:unset;"><a href="#" class="button-primary pull-right">
 										<span>send</span>
 										<div class="button-triangle"></div>
 										<div class="button-triangle2"></div>
 										<div class="button-icon"><i class="fa fa-paper-plane"></i></div>
 									</a>
+								</button>
 									<div class="clearfix"></div>
 								</div>
 							</form>
@@ -907,70 +954,28 @@
 				</div>
 				<div class="col-xs-12 col-md-3">
 					<div class="sidebar">
-						<h3 class="sidebar-title">narrow search<span class="special-color">.</span></h3>
-						<div class="title-separator-primary"></div>
-						
-						<div class="sidebar-select-cont">
-							<select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-								<option>For sale</option>
-								<option>For rent</option>
-							</select>
-							<select name="conuntry1" class="bootstrap-select" title="Country:" multiple data-actions-box="true">
-								<option>United States</option>
-								<option>Canada</option>
-								<option>Mexico</option>
-							</select>
-							<select name="city1" class="bootstrap-select" title="City:" multiple data-actions-box="true">
-								<option>New York</option>
-								<option>Los Angeles</option>
-								<option>Chicago</option>
-								<option>Houston</option>
-								<option>Philadelphia</option>
-								<option>Phoenix</option>
-								<option>Washington</option>
-								<option>Salt Lake Cty</option>
-								<option>Detroit</option>
-								<option>Boston</option>
-							</select>					
-							<select name="location1" class="bootstrap-select" title="Location:" multiple data-actions-box="true">
-								<option>Some location 1</option>
-								<option>Some location 2</option>
-								<option>Some location 3</option>
-								<option>Some location 4</option>
-							</select>
-						</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-price-sidebar-value" class="adv-search-label">Price:</label>
-								<span>$</span>
-								<input type="text" id="slider-range-price-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-price-sidebar" data-min="0" data-max="300000" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-area-sidebar-value" class="adv-search-label">Area:</label>
-								<span>m<sup>2</sup></span>
-								<input type="text" id="slider-range-area-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-area-sidebar" data-min="0" data-max="180" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">Bedrooms:</label>
-								<input type="text" id="slider-range-bedrooms-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-bedrooms-sidebar" data-min="1" data-max="10" class="slider-range"></div>
-							</div>
-							<div class="adv-search-range-cont">	
-								<label for="slider-range-bathrooms-sidebar-value" class="adv-search-label">Bathrooms:</label>
-								<input type="text" id="slider-range-bathrooms-sidebar-value" readonly class="adv-search-amount">
-								<div class="clearfix"></div>
-								<div id="slider-range-bathrooms-sidebar" data-min="1" data-max="4" class="slider-range"></div>
-							</div>
 						<div class="sidebar-search-button-cont">
 							<a href="#" class="button-primary">
-								<span>search</span>
+								<span>Boost Now</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
-								<div class="button-icon"><i class="fa fa-search"></i></div>
+								<div class="button-icon"><i class="fa fa-money"></i></div>
+							</a>
+						</div>
+						<div class="sidebar-search-button-cont">
+							<a href="http://localhost:3000/facebookadd?name=<%=every._id%>" class="button-primary">
+								<span>Facebook</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-facebook"></i></div>
+							</a>
+						</div>
+						<div class="sidebar-search-button-cont">
+							<a href="#" class="button-primary">
+								<span>Instagram</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-instagram"></i></div>
 							</a>
 						</div>
 						<div class="sidebar-title-cont">
@@ -1044,49 +1049,18 @@
 			</div>
 		</div>
 	</section>
-
-
 <!-- Move to top button -->
 
 <div class="move-top">
 	<div class="big-triangle-second-color"></div>
 	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
-</div>
+</div>	
 
-<!-- jQuery  -->
-    <script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
+<script>
 	
-<!-- Bootstrap-->
-    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+	</script>
 
-<!-- Google Maps -->
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfDCV5hXiPamCIT8_vwGXuzimLQ9MF76g&amp;sensor=false&amp;libraries=places"></script>
-	
-<!-- plugins script -->
-	<script type="text/javascript" src="js/plugins.js"></script>
-
-<!-- template scripts -->
-	<script type="text/javascript" src="mail/validate.js"></script>
-    <script type="text/javascript" src="js/apartment.js"></script>
-
-<!-- google maps initialization -->
-	<!-- <script type="text/javascript">
-            google.maps.event.addDomListener(window, 'load', init);
-			function init() {						
-				mapInit(39.6282,-86.1320,"estate-map","images/pin-house.png", true);
-				streetViewInit(39.6282,-86.1320,"estate-street-view");
-				
-				mapInit(41.2693,-70.0874,"grid-map1","images/pin-house.png", false);
-				mapInit(33.7544,-84.3857,"grid-map2","images/pin-apartment.png", false);
-				mapInit(33.7337,-84.4443,"grid-map3","images/pin-land.png", false);
-				mapInit(33.8588,-84.4858,"grid-map4","images/pin-commercial.png", false);
-				mapInit(34.0254,-84.3560,"grid-map5","images/pin-apartment.png", false);
-				mapInit(40.6128,-73.9976,"grid-map6","images/pin-house.png", false);
-			}
-	</script> -->
-	
-	<%- include("login") -%>
+<%- include("login") -%>
 	<%- include("register") -%>
 	<%- include("forget") -%>
 	<%- include("partials/footer") -%>

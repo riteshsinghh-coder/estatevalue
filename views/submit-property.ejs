@@ -1,6 +1,18 @@
 <%- include("partials/header") -%>
-  	
-    <section class="short-image no-padding blog-short-title">
+  	<script>
+		function commercial(){
+			document.getElementById("sbed").style.display="hidden";
+			document.getElementById("sbath").style.display="hidden";
+			document.getElementById("spark").style.display="hidden";
+        }
+		function land(){
+			document.getElementById("sbed").style.display="hidden";
+			document.getElementById("sbath").style.display="hidden";
+			document.getElementById("spark").style.display="hidden";
+        }
+		
+	</script>
+    <section class="short-image no-padding blog-short-title">  
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-lg-12 short-image-title">
@@ -24,10 +36,10 @@
 								
 								<div class="col-xs-12 col-sm-6">
 									<select name="submitpropertytype" class="bootstrap-select" title="Property type:">
-										<option name="a" value="Apartment">Apartment</option>
-										<option name="a" value="House">House</option>
-										<option name="a" value="Commercial">Commercial</option>
-										<option name="a" value="Land">Land</option>
+										<option name="a"  value="Apartment">Apartment</option>
+										<option name="a"  value="House">House</option>
+										<!-- <option name="a"  value="Commercial">Commercial</option>
+										<option name="a" onclick="land()" value="Land">Land</option> -->
 									</select>
 								</div>
 								<div class="col-xs-12 col-sm-6 margin-top-xs-15">
@@ -37,20 +49,41 @@
 									</select>
 								</div>
 								<div class="col-xs-12 col-sm-6 margin-top-15">
-									<input name="submitprice" type="text" class="input-full main-input" placeholder="Price" />
+									<input name="submitprice" id="price" type="number" class="input-full main-input" placeholder="Price" />
+									
+									
 								</div>
 							
+  
+ 
+							
 								<div class="col-xs-12 col-sm-6 margin-top-15 margin-top-xs-0">
-									<input name="submitarea" type="text" class="input-full main-input" placeholder="Area" />
+									
+									<input name="submitarea" id="input-box" type="number" class="input-full main-input" placeholder="Area in square feet"/>
+									
+								
+								</div>
+								
+								
+								<div class="col-xs-12 col-sm-6 ">
+									<input name="submitbedrooms" id="sbed" type="text" class="input-full main-input" placeholder="No of Bedrooms" />
 								</div>
 								<div class="col-xs-12 col-sm-6">
-									<input name="submitbedrooms" type="text" class="input-full main-input" placeholder="Bedrooms" />
+									<input name="submitbathrooms" id="sbath" type="text" class="input-full main-input" placeholder="No of Bathrooms" />
 								</div>
 								<div class="col-xs-12 col-sm-6">
-									<input name="submitbathrooms" type="text" class="input-full main-input" placeholder="Bathrooms" />
+									<input name="submitparking" id="spark" type="text" class="input-full main-input" placeholder="No of Parking" />
+								</div>
+								<div class="col-xs-12 col-sm-6 margin-top-xs-15">
+									<select name="submitavailability" class="bootstrap-select" title="Property Availability">
+										<option name="c" vlaue="Under Construction">Under Construction</option>
+										<option name="c" value="Ready to Move
+										">Ready to Move
+										</option>
+									</select>
 								</div>
 							</div>
-							<textarea name="submitmessage" class="input-full main-input property-textarea" placeholder="Description"></textarea>
+							<textarea name="submitmessage" class="input-full main-input property-textarea" minlength="120" placeholder="Description"></textarea>
 							<div class="row">
 								<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 margin-top-15">
 									<input type="checkbox" id="c1" name="cc" class="main-checkbox" />
@@ -82,17 +115,17 @@
 								</div>
 								<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 margin-top-15">
 									<input type="checkbox" id="c13" name="cc" class="main-checkbox" />
-									<label for="c13"><span></span>Another Option</label><br/>
+									<label for="c13"><span></span>Registery</label><br/>
 									<input type="checkbox" id="c14" name="cc" class="main-checkbox" />
-									<label for="c14"><span></span>Another Option</label><br/>
+									<label for="c14"><span></span>Inverter</label><br/>
 									<input type="checkbox" id="c15" name="cc" class="main-checkbox" />
-									<label for="c15"><span></span>Another Option</label><br/>
+									<label for="c15"><span></span>Furnished</label><br/>
 									<input type="checkbox" id="c16" name="cc" class="main-checkbox" />
-									<label for="c16"><span></span>Another Option</label><br/>
+									<label for="c16"><span></span>Semi-Furnished</label><br/>
 									<input type="checkbox" id="c17" name="cc" class="main-checkbox" />
-									<label for="c17"><span></span>Another Option</label><br/>
+									<label for="c17"><span></span>Power of Attorney</label><br/>
 									<input type="checkbox" id="c18" name="cc" class="main-checkbox" />
-									<label for="c18"><span></span>Another Option</label>
+									<!-- <label for="c18"><span></span></label> -->
 								</div>
 							</div>
 						</div>				
@@ -103,21 +136,24 @@
 						<div class="dark-col margin-top-60">
 							
 							<!-- leave the first input tag and delete rest 3 after I link google map api id=geocomplete and name=Geocomplete -->
-							<input id="" name="submitcity" type="text" class="input-full main-input" placeholder="Enter Your City" />
+							<!-- <mapbox-search-box class="input-full main-input"  access-token='pk.eyJ1Ijoicml0ZXNoa3VtYXJzaW5naCIsImEiOiJjbDhkYm1ubnEwcm8yM3hxOWpneWU0d25wIn0.cpLNiwhiFrTD7QkkAyMX3Q' proximity="0,0"></mapbox-search-box> -->
+							<input id=""  name="submitcity" type="text" class="input-full main-input" placeholder="Enter Your City" />
 							<input id="" name="submitregion" type="text" class="input-full main-input" placeholder="Sector/Region" />
 							<input id="" name="landmark" type="text" class="input-full main-input" placeholder="Landmark" />
 							<input id="" name="state" type="text" class="input-full main-input" placeholder="State" />
-				<!-- i will use this after link google api -->
-							<!-- <p class="negative-margin bold-indent"><p>
-							<div id="submit-property-map" class="submit-property-map"></div>
+				
+							 <p class="negative-margin bold-indent"><p>
+							<div id="geocoder"></div>
+							<br>
+							<div id="submitmap" class="submit-property-map"></div>
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 margin-top-15">
-									<input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly" />
+									<input id="longitude" name="longitude" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly" />
 								</div>
 								<div class="col-xs-12 col-sm-6 margin-top-15">
-									<input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly" />
+									<input id="latitude" name="latitude" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly" />
 								</div>
-							</div> -->
+							</div> 
 						</div>
 					</div>
 					<div class="col-xs-12 margin-top-60">
@@ -155,24 +191,75 @@
 	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
 </div>	
 
+<script>
+		
+mapboxgl.accessToken = 'pk.eyJ1Ijoicml0ZXNoa3VtYXJzaW5naCIsImEiOiJjbDhkYm1ubnEwcm8yM3hxOWpneWU0d25wIn0.cpLNiwhiFrTD7QkkAyMX3Q';
+var map = new mapboxgl.Map({
+  container: 'submitmap',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [77.1025,28.7041],
+    zoom: 14,
+    streetViewControl: true,
+});
+	map.addControl(new mapboxgl.GeolocateControl({
+		positionOption:{
+			enableHighAccuracy:true
+		},
+		trackUserLocation:true
+	}))
+	map.addControl(new mapboxgl.NavigationControl());
+	const geocoder = new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
+		mapboxgl: mapboxgl,
+		marker: true,
+		placeholder: 'Search and Mark',
 
-<!-- jQuery  -->
-    <script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jQuery/jquery-ui.min.js"></script>
-	
-<!-- Bootstrap-->
-    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+		});
+     
+		document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    
+map.on('click', (e) => {
 
-<!-- Google Maps -->
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?AIzaSyBGnmdXgkR-s8DRXKlAek2kJftTvAB3V7Q&amp;sensor=false&amp;libraries=places"></script>
-	
-<!-- plugins script -->
-	<script type="text/javascript" src="js/plugins.js"></script>
+	document.getElementById('latitude').value =
+		(e.lngLat.lat);
+	document.getElementById('longitude').value =
+		(e.lngLat.lng);
+		const marker = new mapboxgl.Marker() 
+.setLngLat([e.lngLat.lng,e.lngLat.lat]) 
+.addTo(map); 
+map.on('click', function() {
+	marker.remove()
+});  
 
-<!-- template scripts -->
-	<script type="text/javascript" src="mail/validate.js"></script>
-    <script type="text/javascript" src="js/apartment.js"></script>
-	
+});
+
+		
+</script>
+<%if(notsigned){%>
+	<script>
+		window.onload = function(){
+	  document.getElementById('registermodalcheck').click();
+	  
+	var scriptTag = document.createElement("script");
+	scriptTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
+	document.getElementsByTagName("head")[0].appendChild(scriptTag);
+	}
+
+	const priceInput = document.getElementById("price");
+const currencySelect = document.getElementById("currency");
+
+currencySelect.addEventListener("change", function() {
+  console.log("Selected currency: ", this.value);
+});
+
+priceInput.addEventListener("input", function() {
+  console.log("Entered price: ", this.value);
+});
+	</script>
+	<%};%>
+
+
+
 	<%- include("login") -%>
 <%- include("register") -%>
 <%- include("forget") -%>

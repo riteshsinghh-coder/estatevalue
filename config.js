@@ -1,5 +1,5 @@
-emailUser="onlyvee10@gmail.com",
-emailPassword="Ritesh@143"
+emailUser="estatevalueofficial@gmail.com",
+emailPassword="iuxtylzwwyxcxssy"
 
 
 module.exports={emailUser,emailPassword};
