@@ -25,7 +25,7 @@ const otp =require('otp-generator');
 const { ecNormalize } = require('sshpk');
 const { Db } = require('mongodb');
 const axios=require('axios');
-const session = require('express-session');
+
 const randomstring=require('randomstring');
 const cors=require('cors');
 const nodemailer=require('nodemailer');
@@ -68,6 +68,7 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
